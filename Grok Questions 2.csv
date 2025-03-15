@@ -1,0 +1,95 @@
+Id,category,Question_Number,Question_Text,Answer_Format,Answer_Values
+1,Lifestyle,1.0,In the past 12 months; have you used any tobacco or nicotine products? (including cigarettes; e-cigarettes; cigars; pipe; chewing tobacco; or nicotine replacements),Yes/No,Yes;No
+2,Lifestyle,1.1,What type of tobacco/nicotine product do you use?,Multiple Choice,Cigarettes;Cigar/Pipe;E-cigarettes/Vape;Smokeless/chewing tobacco;Other
+3,Lifestyle,1.2,How much do you typically use?,Multiple Choice,Occasional (few times a week or less);Light (1–5 per day);Moderate (6–20 per day);Heavy (>20 per day)
+4,Lifestyle,1.3,How many years have you been using tobacco/nicotine?,Multiple Choice,Less than 1 year;1–5 years;6–10 years;More than 10 years
+5,Lifestyle,1.4,Are you currently attempting to quit or reduce; or have you made any quit attempts in the last year?,Yes/No,Yes;No
+6,Lifestyle,1.5,Have you experienced any health issues likely related to your smoking or tobacco use?,Multiple Choice,Minor difficulties; Moderate difficulties; Significant impact on health
+7,Lifestyle,2.0,Do you ever consume alcoholic beverages?,Yes/No,Yes;No
+8,Lifestyle,2.1,On average; how many units of alcohol do you drink per week? (1 unit ? 1 beer; 1 small wine; or 1 shot),Multiple Choice,0 (None);1–7 units;8–14 units;15–21 units;More than 21 units
+9,Lifestyle,2.2,Has a doctor ever advised you to cut down or stop drinking alcohol?,Yes/No,Yes;No
+10,Lifestyle,2.3,Have you ever sought counseling or treatment for alcohol use?,Yes/No,Yes;No
+11,Lifestyle,2.4,In the past year have you experienced negative impacts from alcohol use (e.g. health; legal; or work issues)?,Yes/No,Yes;No
+12,Lifestyle,2.5,What best describes your current alcohol use?,Multiple Choice,Occasional/Social drinker;Regular drinker (moderate);Heavy drinker;Former drinker (quit)
+13,Lifestyle,3.0,Do you currently use any recreational drugs or have a history of substance abuse (non-prescribed)?,Yes/No,Yes;No
+14,Lifestyle,3.1,Which substances do you use or have used?,Multiple Choice,Cannabis (marijuana/dagga);Cocaine or stimulants;Opiates/Opioids;Hallucinogens;Other
+15,Lifestyle,3.2,How frequently do you currently use these substances?,Multiple Choice,No longer use (past use only);Rarely (few times a year);Occasionally (monthly);Regularly (weekly or more often)
+16,Lifestyle,3.3,Have you ever sought treatment or counseling for drug use/addiction?,Yes/No,Yes;No
+17,Lifestyle,3.4,When was the last time you used any recreational drugs?,Multiple Choice,Within the past month;1–6 months ago;6–12 months ago;More than a year ago;Never used
+18,Lifestyle,3.5,Have you experienced any health issues or consequences related to drug use?,Yes/No,Yes;No
+19,Physical Health,4.0,What is your height in centimetres?,Integer,
+20,Physical Health,5.0,What is your weight in Kilograms?,Integer,
+21,Physical Health,6.0,In the past 12 months; has your weight changed by more than 5 kg?,Yes/No,Yes;No
+22,Physical Health,6.1,If yes was the weight change intentional or unintentional?,Multiple Choice,Intentional (diet/exercise);Unintentional (health/unknown);Not applicable (no change)
+23,Medical History,7.0,Have you ever been diagnosed with or treated for any heart or circulatory disorder?,Yes/No,Yes;No
+24,Medical History,7.1,Which heart/circulatory condition(s) do you have/had?,Multiple Choice,High blood pressure (hypertension);High cholesterol;Heart attack;Angina/coronary artery disease;Heart murmur or valve disorder;Irregular heartbeat (arrhythmia);Other
+25,Medical History,7.2,When were you first diagnosed?,Multiple Choice,Within the last year;1–5 years ago;More than 5 years ago;Not sure
+26,Medical History,7.3,What treatment or management are you undergoing?,Multiple Choice,No treatment;Medication;Lifestyle changes (diet/exercise);Surgery or procedure;Other
+27,Medical History,7.4,What is the current status of your heart/circulatory condition?,Multiple Choice,Fully resolved;Stable and well-controlled;Managed with some difficulty;Active or uncontrolled;Other
+28,Medical History,7.5,Does this heart condition affect your daily activities or ability to work/exercise?,Multiple Choice,Not at all;Mild impact;Moderate impact;Severe impact
+29,Medical History,8.0,Do you have or have you ever had any respiratory (lung) conditions (e.g. asthma; COPD; etc.)?,Yes/No,Yes;No
+30,Medical History,8.1,Which respiratory condition(s) do you have/had?,Multiple Choice,Asthma;Chronic bronchitis/COPD;Tuberculosis or chronic infection;Sleep apnea;Other
+31,Medical History,8.2,When were you diagnosed and at what age (if known)?,Open Ended,
+32,Medical History,8.3,What treatment have you undergone for this respiratory condition?,Multiple Choice,Inhalers/medication;Oxygen therapy;Lifestyle changes;Surgery/hospitalization;Other
+33,Medical History,8.4,How frequently do you experience symptoms and how severe are they?,Multiple Choice,No current symptoms;Infrequent/mild;Moderate;Frequent/severe
+34,Medical History,8.5,Does this respiratory condition limit your daily life or activities?,Multiple Choice,Not at all;Mild limitation;Moderate limitation;Severe limitation
+35,Medical History,9.0,Do you have or have you ever had any digestive; liver; kidney; or urinary tract conditions?,Yes/No,Yes;No
+36,Medical History,9.1,Please specify which digestive/organ condition(s) you have/had.,Multiple Choice,Stomach ulcer or gastritis;Intestinal disorder (e.g. Crohn’s; colitis);Liver condition (hepatitis; fatty liver);Pancreatitis;Kidney disease/stones;Bladder/urinary disorder;Other
+37,Medical History,9.2,When was it diagnosed and is it still ongoing?,Multiple Choice,Within last year;1–5 years ago;More than 5 years ago;Resolved/Ongoing
+38,Medical History,9.3,What treatment or management are you receiving?,Multiple Choice,Medication;Dietary changes;Surgery/Hospitalization;Specialist care;Other/None
+39,Medical History,9.4,What is the current status of the condition?,Multiple Choice,Fully resolved;Controlled (managed with treatment);Active;Worsening/progressive;Unsure
+40,Medical History,9.5,Does this condition affect your health or daily life currently?,Multiple Choice,No impact now;Mild impact;Moderate impact;Severe impact
+41,Medical History,10.0,Have you ever had any neurological or nervous system disorders (stroke; seizures; etc.)?,Yes/No,Yes;No
+42,Medical History,10.1,Which neurological condition have you been diagnosed with?,Multiple Choice,Stroke/TIA;Epilepsy/Seizures;Multiple sclerosis;Chronic migraines/headaches;Neuropathy/nerve disorder;Other
+43,Medical History,10.2,When did this condition begin or when were you diagnosed?,Multiple Choice,Within the last year;1–5 years ago;More than 5 years ago
+44,Medical History,10.3,What treatment or management are you receiving?,Multiple Choice,Medication;Surgery/Procedure;Therapy/Rehab;No treatment;Other
+45,Medical History,10.4,What is the current status of the condition?,Multiple Choice,No recurrence / In remission;Well-controlled;Occasional symptoms;Frequent/Progressive;Other
+46,Medical History,10.5,Does this condition cause any limitations in daily life or work?,Multiple Choice,No limitations;Some limitations;Significant limitations
+47,Medical History,11.0,Do you have or have you ever had any musculoskeletal (muscles; bones; joints) issues?,Yes/No,Yes;No
+48,Medical History,11.1,What musculoskeletal condition or pain issue do you have/had?,Multiple Choice,Arthritis;Chronic back/neck pain;Gout;Bone/joint injury/disorder;Muscle/tendon disorder;Other
+49,Medical History,11.2,How long have you experienced this condition or pain?,Multiple Choice,Less than 6 months;6 months–2 years;Over 2 years;On/off (recurrent episodes)
+50,Medical History,11.3,How are you managing or treating this condition?,Multiple Choice,Medication (pain/anti-inflammatory);Physical therapy;Injections/procedures;Surgery;Lifestyle modifications;Other/No treatment
+51,Medical History,11.4,What is the current status of your musculoskeletal condition?,Multiple Choice,Resolved (no ongoing issues);Intermittent (occasional flare-ups);Chronic but stable;Chronic and worsening
+52,Medical History,11.5,How does this issue affect your mobility or daily function?,Multiple Choice,No impact;Mild impact;Moderate impact;Severe impact
+53,Medical History,12.0,Have you ever had any mental health conditions or received therapy for mental/emotional issues?,Yes/No,Yes;No
+54,Medical History,12.1,What mental health condition were you diagnosed with?,Multiple Choice,Depression;Anxiety/Panic disorder;Bipolar disorder;Stress/trauma (PTSD);Other
+55,Medical History,12.2,What treatment have you received or are you receiving?,Multiple Choice,Medication;Therapy/Counseling;Hospitalization;No formal treatment;Other
+56,Medical History,12.3,What is the current status of your mental health condition?,Multiple Choice,Resolved;Well-managed (controlled);Ongoing (continuous management);Severe/Uncontrolled;Other
+57,Medical History,12.4,When was the last time you experienced significant symptoms?,Multiple Choice,Within the last 3 months;3–12 months ago;1–5 years ago;More than 5 years ago
+58,Medical History,12.5,Did/does this mental health condition impact your daily life or work capacity?,Multiple Choice,No impact;Mild impact;Moderate impact;Severe impact
+59,Medical History,13.0,Have you ever been diagnosed with diabetes or any endocrine (hormonal) disorder?,Yes/No,Yes;No
+60,Medical History,13.1,Please select which condition applies.,Multiple Choice,Type 1 diabetes;Type 2 diabetes;Pre-diabetes;Gestational diabetes;Thyroid disorder;Other endocrine disorder
+61,Medical History,13.2,When were you diagnosed?,Multiple Choice,Within the last year;1–5 years ago;More than 5 years ago
+62,Medical History,13.3,How is this condition being managed or treated?,Multiple Choice,Diet/Exercise only;Oral medication;Insulin injections/pump;Thyroid medication;No treatment;Other
+63,Medical History,13.4,If diabetic/thyroid; what is your last known HbA1c or thyroid test result?,Open Ended,
+64,Medical History,13.5,How would you describe the current control of the condition and any complications?,Multiple Choice,Well-controlled; no complications;Moderately controlled;Poorly controlled;Complications present
+65,Medical History,14.0,Have you ever been diagnosed with any form of cancer; leukemia; or malignant tumor?,Yes/No,Yes;No
+66,Medical History,14.1,What type of cancer/tumor were you diagnosed with?,Open Ended,
+67,Medical History,14.2,When were you diagnosed and what was the stage/grade (if known)?,Open Ended,
+68,Medical History,14.3,What treatment did you undergo (surgery; chemo; radiation; etc.)?,Multiple Choice,Surgery;Radiation therapy;Chemotherapy;Medication/hormone therapy;No treatment;Other
+69,Medical History,14.4,What is the current status (e.g. remission; active; stable)?,Multiple Choice,Fully recovered;In remission;Active (under treatment);Stable/chronic;Other
+70,Medical History,14.5,Are you under regular follow-up and has there been any recurrence?,Multiple Choice,No recurrence; routine check-ups;Abnormal follow-up but no confirmed recurrence;Recurrence occurred;Still under initial treatment
+71,Medical History,15.0,Have you ever tested positive for HIV or had any immunological/chronic infectious disease?,Yes/No,Yes;No
+72,Medical History,15.1,Please specify the condition (HIV; chronic hepatitis; other immune disorder).,Multiple Choice,HIV/AIDS;Chronic Hepatitis B;Chronic Hepatitis C;Other immunodeficiency
+73,Medical History,15.2,When were you diagnosed; and what treatment are you on?,Open Ended,
+74,Medical History,15.3,If HIV; do you know your latest CD4 count and viral load? (Or relevant test for other conditions.),Open Ended,
+75,Medical History,15.4,How would you describe the current status of the condition?,Multiple Choice,Well-controlled/undetectable;Stable;Active;Worsening;Not sure
+76,Medical History,15.5,Have you experienced any complications or related health issues from this condition?,Yes/No,Yes;No
+77,Medical History,16.0,Do you have any other illnesses or major surgeries not covered above?,Yes/No,Yes;No
+78,Medical History,16.1,Please provide details of any other condition; injury; or surgery/hospitalization.,Open Ended,
+79,Medical History,16.2,Is this condition or surgery still affecting you?,Multiple Choice,No; fully recovered;Yes; still under treatment;Some ongoing effects;Not applicable
+80,Medical History,16.3,Are you currently on any treatment or medication for this condition?,Yes/No,Yes;No
+81,Medical History,16.4,When was your last check-up or consultation for this condition?,Multiple Choice,Within last 6 months;6–12 months ago;1–2 years ago;More than 2 years ago
+82,Medical History,16.5,Does this condition impose any current limitations or require special accommodations?,Yes/No,Yes;No
+83,Insurance History,17.0,Do you currently have any life insurance; or have you held a policy in the past?,Yes/No,Yes;No
+84,Insurance History,17.1,Please provide details (insurer; coverage amount; year started).,Open Ended,
+85,Insurance History,17.2,Is this policy still active or was it terminated?,Multiple Choice,Currently active;Terminated/Lapsed;Matured/Expired
+86,Insurance History,17.3,Have you ever made a claim on any life; disability; or critical illness policy?,Yes/No,Yes;No
+87,Insurance History,17.4,If yes; please provide brief details of the claim(s).,Open Ended,
+88,Insurance History,17.5,Do you have any other life insurance coverage (e.g. through employer)?,Yes/No,Yes;No
+89,Insurance History,18.0,Have you ever had an insurance application declined; postponed; or approved with special terms?,Yes/No,Yes;No
+90,Insurance History,18.1,What type of policy was involved (life; health; disability; etc.)?,Multiple Choice,Life Insurance;Disability/Critical Illness;Medical/Health Insurance;Other
+91,Insurance History,18.2,When did this occur? (Year or approximate date),Open Ended,
+92,Insurance History,18.3,Which insurer made that decision (if known)?,Open Ended,
+93,Insurance History,18.4,What was the outcome of that application?,Multiple Choice,Declined;Postponed;Approved with extra premium;Approved with exclusions;Other
+94,Insurance History,18.5,Were you given a reason or explanation for that decision?,Open Ended,

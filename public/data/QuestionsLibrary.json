@@ -1,0 +1,1136 @@
+[
+  {
+    "Id": 1,
+    "category": "Lifestyle",
+    "Question_Number": 1,
+    "Question_Text": "In the past 12 months; have you used any tobacco or nicotine products? (including cigarettes; e-cigarettes; cigars; pipe; chewing tobacco; or nicotine replacements)",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 2,
+    "category": "Lifestyle",
+    "Question_Number": 1.1,
+    "Question_Text": "What type of tobacco/nicotine product do you use?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Cigarettes",
+      "Cigar/Pipe",
+      "E-cigarettes/Vape",
+      "Smokeless/chewing tobacco",
+      "Other"
+    ]
+  },
+  {
+    "Id": 3,
+    "category": "Lifestyle",
+    "Question_Number": 1.2,
+    "Question_Text": "How much do you typically use?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Occasional (few times a week or less)",
+      "Light (1-5 per day)",
+      "Moderate (6-20 per day)",
+      "Heavy (>20 per day)"
+    ]
+  },
+  {
+    "Id": 4,
+    "category": "Lifestyle",
+    "Question_Number": 1.3,
+    "Question_Text": "How many years have you been using tobacco/nicotine?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Less than 1 year",
+      "1-5 years",
+      "6-10 years",
+      "More than 10 years"
+    ]
+  },
+  {
+    "Id": 5,
+    "category": "Lifestyle",
+    "Question_Number": 1.4,
+    "Question_Text": "Are you currently attempting to quit or reduce; or have you made any quit attempts in the last year?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 6,
+    "category": "Lifestyle",
+    "Question_Number": 1.5,
+    "Question_Text": "Have you experienced any health issues likely related to your smoking or tobacco use?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Minor difficulties",
+      "Moderate difficulties",
+      "Significant impact on health"
+    ]
+  },
+  {
+    "Id": 7,
+    "category": "Lifestyle",
+    "Question_Number": 2,
+    "Question_Text": "Do you ever consume alcoholic beverages?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 8,
+    "category": "Lifestyle",
+    "Question_Number": 2.1,
+    "Question_Text": "On average; how many units of alcohol do you drink per week? (1 unit ? 1 beer; 1 small wine; or 1 shot)",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "0 (None)",
+      "1-7 units",
+      "8-14 units",
+      "15-21 units",
+      "More than 21 units"
+    ]
+  },
+  {
+    "Id": 9,
+    "category": "Lifestyle",
+    "Question_Number": 2.2,
+    "Question_Text": "Has a doctor ever advised you to cut down or stop drinking alcohol?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 10,
+    "category": "Lifestyle",
+    "Question_Number": 2.3,
+    "Question_Text": "Have you ever sought counseling or treatment for alcohol use?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 11,
+    "category": "Lifestyle",
+    "Question_Number": 2.4,
+    "Question_Text": "In the past year have you experienced negative impacts from alcohol use (e.g. health; legal; or work issues)?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 12,
+    "category": "Lifestyle",
+    "Question_Number": 2.5,
+    "Question_Text": "What best describes your current alcohol use?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Occasional/Social drinker",
+      "Regular drinker (moderate)",
+      "Heavy drinker",
+      "Former drinker (quit)"
+    ]
+  },
+  {
+    "Id": 13,
+    "category": "Lifestyle",
+    "Question_Number": 3,
+    "Question_Text": "Do you currently use any recreational drugs or have a history of substance abuse (non-prescribed)?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 14,
+    "category": "Lifestyle",
+    "Question_Number": 3.1,
+    "Question_Text": "Which substances do you use or have used?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Cannabis (marijuana/dagga)",
+      "Cocaine or stimulants",
+      "Opiates/Opioids",
+      "Hallucinogens",
+      "Other"
+    ]
+  },
+  {
+    "Id": 15,
+    "category": "Lifestyle",
+    "Question_Number": 3.2,
+    "Question_Text": "How frequently do you currently use these substances?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "No longer use (past use only)",
+      "Rarely (few times a year)",
+      "Occasionally (monthly)",
+      "Regularly (weekly or more often)"
+    ]
+  },
+  {
+    "Id": 16,
+    "category": "Lifestyle",
+    "Question_Number": 3.3,
+    "Question_Text": "Have you ever sought treatment or counseling for drug use/addiction?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 17,
+    "category": "Lifestyle",
+    "Question_Number": 3.4,
+    "Question_Text": "When was the last time you used any recreational drugs?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Within the past month",
+      "1-6 months ago",
+      "6-12 months ago",
+      "More than a year ago",
+      "Never used"
+    ]
+  },
+  {
+    "Id": 18,
+    "category": "Lifestyle",
+    "Question_Number": 3.5,
+    "Question_Text": "Have you experienced any health issues or consequences related to drug use?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 19,
+    "category": "Physical Health",
+    "Question_Number": 4,
+    "Question_Text": "What is your height in centimetres?",
+    "Answer_Format": "Integer",
+    "Answer_Values": []
+  },
+  {
+    "Id": 20,
+    "category": "Physical Health",
+    "Question_Number": 5,
+    "Question_Text": "What is your weight in Kilograms?",
+    "Answer_Format": "Integer",
+    "Answer_Values": []
+  },
+  {
+    "Id": 21,
+    "category": "Physical Health",
+    "Question_Number": 6,
+    "Question_Text": "In the past 12 months; has your weight changed by more than 5 kg?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 22,
+    "category": "Physical Health",
+    "Question_Number": 6.1,
+    "Question_Text": "If yes was the weight change intentional or unintentional?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Intentional (diet/exercise)",
+      "Unintentional (health/unknown)",
+      "Not applicable (no change)"
+    ]
+  },
+  {
+    "Id": 23,
+    "category": "Medical History",
+    "Question_Number": 7,
+    "Question_Text": "Have you ever been diagnosed with or treated for any heart or circulatory disorder?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 24,
+    "category": "Medical History",
+    "Question_Number": 7.1,
+    "Question_Text": "Which heart/circulatory condition(s) do you have/had?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "High blood pressure (hypertension)",
+      "High cholesterol",
+      "Heart attack",
+      "Angina/coronary artery disease",
+      "Heart murmur or valve disorder",
+      "Irregular heartbeat (arrhythmia)",
+      "Other"
+    ]
+  },
+  {
+    "Id": 25,
+    "category": "Medical History",
+    "Question_Number": 7.2,
+    "Question_Text": "When were you first diagnosed?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Within the last year",
+      "1-5 years ago",
+      "More than 5 years ago",
+      "Not sure"
+    ]
+  },
+  {
+    "Id": 26,
+    "category": "Medical History",
+    "Question_Number": 7.3,
+    "Question_Text": "What treatment or management are you undergoing?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "No treatment",
+      "Medication",
+      "Lifestyle changes (diet/exercise)",
+      "Surgery or procedure",
+      "Other"
+    ]
+  },
+  {
+    "Id": 27,
+    "category": "Medical History",
+    "Question_Number": 7.4,
+    "Question_Text": "What is the current status of your heart/circulatory condition?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Fully resolved",
+      "Stable and well-controlled",
+      "Managed with some difficulty",
+      "Active or uncontrolled",
+      "Other"
+    ]
+  },
+  {
+    "Id": 28,
+    "category": "Medical History",
+    "Question_Number": 7.5,
+    "Question_Text": "Does this heart condition affect your daily activities or ability to work/exercise?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Not at all",
+      "Mild impact",
+      "Moderate impact",
+      "Severe impact"
+    ]
+  },
+  {
+    "Id": 29,
+    "category": "Medical History",
+    "Question_Number": 8,
+    "Question_Text": "Do you have or have you ever had any respiratory (lung) conditions (e.g. asthma; COPD; etc.)?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 30,
+    "category": "Medical History",
+    "Question_Number": 8.1,
+    "Question_Text": "Which respiratory condition(s) do you have/had?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Asthma",
+      "Chronic bronchitis/COPD",
+      "Tuberculosis or chronic infection",
+      "Sleep apnea",
+      "Other"
+    ]
+  },
+  {
+    "Id": 31,
+    "category": "Medical History",
+    "Question_Number": 8.2,
+    "Question_Text": "When were you diagnosed and at what age (if known)?",
+    "Answer_Format": "Open Ended",
+    "Answer_Values": []
+  },
+  {
+    "Id": 32,
+    "category": "Medical History",
+    "Question_Number": 8.3,
+    "Question_Text": "What treatment have you undergone for this respiratory condition?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Inhalers/medication",
+      "Oxygen therapy",
+      "Lifestyle changes",
+      "Surgery/hospitalization",
+      "Other"
+    ]
+  },
+  {
+    "Id": 33,
+    "category": "Medical History",
+    "Question_Number": 8.4,
+    "Question_Text": "How frequently do you experience symptoms and how severe are they?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "No current symptoms",
+      "Infrequent/mild",
+      "Moderate",
+      "Frequent/severe"
+    ]
+  },
+  {
+    "Id": 34,
+    "category": "Medical History",
+    "Question_Number": 8.5,
+    "Question_Text": "Does this respiratory condition limit your daily life or activities?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Not at all",
+      "Mild limitation",
+      "Moderate limitation",
+      "Severe limitation"
+    ]
+  },
+  {
+    "Id": 35,
+    "category": "Medical History",
+    "Question_Number": 9,
+    "Question_Text": "Do you have or have you ever had any digestive; liver; kidney; or urinary tract conditions?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 36,
+    "category": "Medical History",
+    "Question_Number": 9.1,
+    "Question_Text": "Please specify which digestive/organ condition(s) you have/had.",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Stomach ulcer or gastritis",
+      "Intestinal disorder (e.g. Crohn�s",
+      "colitis)",
+      "Liver condition (hepatitis",
+      "fatty liver)",
+      "Pancreatitis",
+      "Kidney disease/stones",
+      "Bladder/urinary disorder",
+      "Other"
+    ]
+  },
+  {
+    "Id": 37,
+    "category": "Medical History",
+    "Question_Number": 9.2,
+    "Question_Text": "When was it diagnosed and is it still ongoing?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Within last year",
+      "1-5 years ago",
+      "More than 5 years ago",
+      "Resolved/Ongoing"
+    ]
+  },
+  {
+    "Id": 38,
+    "category": "Medical History",
+    "Question_Number": 9.3,
+    "Question_Text": "What treatment or management are you receiving?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Medication",
+      "Dietary changes",
+      "Surgery/Hospitalization",
+      "Specialist care",
+      "Other/None"
+    ]
+  },
+  {
+    "Id": 39,
+    "category": "Medical History",
+    "Question_Number": 9.4,
+    "Question_Text": "What is the current status of the condition?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Fully resolved",
+      "Controlled (managed with treatment)",
+      "Active",
+      "Worsening/progressive",
+      "Unsure"
+    ]
+  },
+  {
+    "Id": 40,
+    "category": "Medical History",
+    "Question_Number": 9.5,
+    "Question_Text": "Does this condition affect your health or daily life currently?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "No impact now",
+      "Mild impact",
+      "Moderate impact",
+      "Severe impact"
+    ]
+  },
+  {
+    "Id": 41,
+    "category": "Medical History",
+    "Question_Number": 10,
+    "Question_Text": "Have you ever had any neurological or nervous system disorders (stroke; seizures; etc.)?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 42,
+    "category": "Medical History",
+    "Question_Number": 10.1,
+    "Question_Text": "Which neurological condition have you been diagnosed with?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Stroke/TIA",
+      "Epilepsy/Seizures",
+      "Multiple sclerosis",
+      "Chronic migraines/headaches",
+      "Neuropathy/nerve disorder",
+      "Other"
+    ]
+  },
+  {
+    "Id": 43,
+    "category": "Medical History",
+    "Question_Number": 10.2,
+    "Question_Text": "When did this condition begin or when were you diagnosed?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Within the last year",
+      "1-5 years ago",
+      "More than 5 years ago"
+    ]
+  },
+  {
+    "Id": 44,
+    "category": "Medical History",
+    "Question_Number": 10.3,
+    "Question_Text": "What treatment or management are you receiving?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Medication",
+      "Surgery/Procedure",
+      "Therapy/Rehab",
+      "No treatment",
+      "Other"
+    ]
+  },
+  {
+    "Id": 45,
+    "category": "Medical History",
+    "Question_Number": 10.4,
+    "Question_Text": "What is the current status of the condition?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "No recurrence / In remission",
+      "Well-controlled",
+      "Occasional symptoms",
+      "Frequent/Progressive",
+      "Other"
+    ]
+  },
+  {
+    "Id": 46,
+    "category": "Medical History",
+    "Question_Number": 10.5,
+    "Question_Text": "Does this condition cause any limitations in daily life or work?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "No limitations",
+      "Some limitations",
+      "Significant limitations"
+    ]
+  },
+  {
+    "Id": 47,
+    "category": "Medical History",
+    "Question_Number": 11,
+    "Question_Text": "Do you have or have you ever had any musculoskeletal (muscles; bones; joints) issues?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 48,
+    "category": "Medical History",
+    "Question_Number": 11.1,
+    "Question_Text": "What musculoskeletal condition or pain issue do you have/had?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Arthritis",
+      "Chronic back/neck pain",
+      "Gout",
+      "Bone/joint injury/disorder",
+      "Muscle/tendon disorder",
+      "Other"
+    ]
+  },
+  {
+    "Id": 49,
+    "category": "Medical History",
+    "Question_Number": 11.2,
+    "Question_Text": "How long have you experienced this condition or pain?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Less than 6 months",
+      "6 months - 2 years",
+      "Over 2 years",
+      "On/off (recurrent episodes)"
+    ]
+  },
+  {
+    "Id": 50,
+    "category": "Medical History",
+    "Question_Number": 11.3,
+    "Question_Text": "How are you managing or treating this condition?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Medication (pain/anti-inflammatory)",
+      "Physical therapy",
+      "Injections/procedures",
+      "Surgery",
+      "Lifestyle modifications",
+      "Other/No treatment"
+    ]
+  },
+  {
+    "Id": 51,
+    "category": "Medical History",
+    "Question_Number": 11.4,
+    "Question_Text": "What is the current status of your musculoskeletal condition?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Resolved (no ongoing issues)",
+      "Intermittent (occasional flare-ups)",
+      "Chronic but stable",
+      "Chronic and worsening"
+    ]
+  },
+  {
+    "Id": 52,
+    "category": "Medical History",
+    "Question_Number": 11.5,
+    "Question_Text": "How does this issue affect your mobility or daily function?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "No impact",
+      "Mild impact",
+      "Moderate impact",
+      "Severe impact"
+    ]
+  },
+  {
+    "Id": 53,
+    "category": "Medical History",
+    "Question_Number": 12,
+    "Question_Text": "Have you ever had any mental health conditions or received therapy for mental/emotional issues?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 54,
+    "category": "Medical History",
+    "Question_Number": 12.1,
+    "Question_Text": "What mental health condition were you diagnosed with?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Depression",
+      "Anxiety/Panic disorder",
+      "Bipolar disorder",
+      "Stress/trauma (PTSD)",
+      "Other"
+    ]
+  },
+  {
+    "Id": 55,
+    "category": "Medical History",
+    "Question_Number": 12.2,
+    "Question_Text": "What treatment have you received or are you receiving?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Medication",
+      "Therapy/Counseling",
+      "Hospitalization",
+      "No formal treatment",
+      "Other"
+    ]
+  },
+  {
+    "Id": 56,
+    "category": "Medical History",
+    "Question_Number": 12.3,
+    "Question_Text": "What is the current status of your mental health condition?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Resolved",
+      "Well-managed (controlled)",
+      "Ongoing (continuous management)",
+      "Severe/Uncontrolled",
+      "Other"
+    ]
+  },
+  {
+    "Id": 57,
+    "category": "Medical History",
+    "Question_Number": 12.4,
+    "Question_Text": "When was the last time you experienced significant symptoms?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Within the last 3 months",
+      "3 - 12 months ago",
+      "1 - 5 years ago",
+      "More than 5 years ago"
+    ]
+  },
+  {
+    "Id": 58,
+    "category": "Medical History",
+    "Question_Number": 12.5,
+    "Question_Text": "Did/does this mental health condition impact your daily life or work capacity?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "No impact",
+      "Mild impact",
+      "Moderate impact",
+      "Severe impact"
+    ]
+  },
+  {
+    "Id": 59,
+    "category": "Medical History",
+    "Question_Number": 13,
+    "Question_Text": "Have you ever been diagnosed with diabetes or any endocrine (hormonal) disorder?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 60,
+    "category": "Medical History",
+    "Question_Number": 13.1,
+    "Question_Text": "Please select which condition applies.",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Type 1 diabetes",
+      "Type 2 diabetes",
+      "Pre-diabetes",
+      "Gestational diabetes",
+      "Thyroid disorder",
+      "Other endocrine disorder"
+    ]
+  },
+  {
+    "Id": 61,
+    "category": "Medical History",
+    "Question_Number": 13.2,
+    "Question_Text": "When were you diagnosed?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Within the last year",
+      "1 - 5 years ago",
+      "More than 5 years ago"
+    ]
+  },
+  {
+    "Id": 62,
+    "category": "Medical History",
+    "Question_Number": 13.3,
+    "Question_Text": "How is this condition being managed or treated?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Diet/Exercise only",
+      "Oral medication",
+      "Insulin injections/pump",
+      "Thyroid medication",
+      "No treatment",
+      "Other"
+    ]
+  },
+  {
+    "Id": 63,
+    "category": "Medical History",
+    "Question_Number": 13.4,
+    "Question_Text": "If diabetic/thyroid; what is your last known HbA1c or thyroid test result?",
+    "Answer_Format": "Open Ended",
+    "Answer_Values": []
+  },
+  {
+    "Id": 64,
+    "category": "Medical History",
+    "Question_Number": 13.5,
+    "Question_Text": "How would you describe the current control of the condition and any complications?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Well-controlled",
+      "no complications",
+      "Moderately controlled",
+      "Poorly controlled",
+      "Complications present"
+    ]
+  },
+  {
+    "Id": 65,
+    "category": "Medical History",
+    "Question_Number": 14,
+    "Question_Text": "Have you ever been diagnosed with any form of cancer; leukemia; or malignant tumor?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 66,
+    "category": "Medical History",
+    "Question_Number": 14.1,
+    "Question_Text": "What type of cancer/tumor were you diagnosed with?",
+    "Answer_Format": "Open Ended",
+    "Answer_Values": []
+  },
+  {
+    "Id": 67,
+    "category": "Medical History",
+    "Question_Number": 14.2,
+    "Question_Text": "When were you diagnosed and what was the stage/grade (if known)?",
+    "Answer_Format": "Open Ended",
+    "Answer_Values": []
+  },
+  {
+    "Id": 68,
+    "category": "Medical History",
+    "Question_Number": 14.3,
+    "Question_Text": "What treatment did you undergo (surgery; chemo; radiation; etc.)?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Surgery",
+      "Radiation therapy",
+      "Chemotherapy",
+      "Medication/hormone therapy",
+      "No treatment",
+      "Other"
+    ]
+  },
+  {
+    "Id": 69,
+    "category": "Medical History",
+    "Question_Number": 14.4,
+    "Question_Text": "What is the current status (e.g. remission; active; stable)?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Fully recovered",
+      "In remission",
+      "Active (under treatment)",
+      "Stable/chronic",
+      "Other"
+    ]
+  },
+  {
+    "Id": 70,
+    "category": "Medical History",
+    "Question_Number": 14.5,
+    "Question_Text": "Are you under regular follow-up and has there been any recurrence?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "No recurrence",
+      "routine check-ups",
+      "Abnormal follow-up but no confirmed recurrence",
+      "Recurrence occurred",
+      "Still under initial treatment"
+    ]
+  },
+  {
+    "Id": 71,
+    "category": "Medical History",
+    "Question_Number": 15,
+    "Question_Text": "Have you ever tested positive for HIV or had any immunological/chronic infectious disease?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 72,
+    "category": "Medical History",
+    "Question_Number": 15.1,
+    "Question_Text": "Please specify the condition (HIV; chronic hepatitis; other immune disorder).",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "HIV/AIDS",
+      "Chronic Hepatitis B",
+      "Chronic Hepatitis C",
+      "Other immunodeficiency"
+    ]
+  },
+  {
+    "Id": 73,
+    "category": "Medical History",
+    "Question_Number": 15.2,
+    "Question_Text": "When were you diagnosed; and what treatment are you on?",
+    "Answer_Format": "Open Ended",
+    "Answer_Values": []
+  },
+  {
+    "Id": 74,
+    "category": "Medical History",
+    "Question_Number": 15.3,
+    "Question_Text": "If HIV; do you know your latest CD4 count and viral load? (Or relevant test for other conditions.)",
+    "Answer_Format": "Open Ended",
+    "Answer_Values": []
+  },
+  {
+    "Id": 75,
+    "category": "Medical History",
+    "Question_Number": 15.4,
+    "Question_Text": "How would you describe the current status of the condition?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Well-controlled/undetectable",
+      "Stable",
+      "Active",
+      "Worsening",
+      "Not sure"
+    ]
+  },
+  {
+    "Id": 76,
+    "category": "Medical History",
+    "Question_Number": 15.5,
+    "Question_Text": "Have you experienced any complications or related health issues from this condition?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 77,
+    "category": "Medical History",
+    "Question_Number": 16,
+    "Question_Text": "Do you have any other illnesses or major surgeries not covered above?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 78,
+    "category": "Medical History",
+    "Question_Number": 16.1,
+    "Question_Text": "Please provide details of any other condition; injury; or surgery/hospitalization.",
+    "Answer_Format": "Open Ended",
+    "Answer_Values": []
+  },
+  {
+    "Id": 79,
+    "category": "Medical History",
+    "Question_Number": 16.2,
+    "Question_Text": "Is this condition or surgery still affecting you?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "No",
+      "fully recovered",
+      "Yes",
+      "still under treatment",
+      "Some ongoing effects",
+      "Not applicable"
+    ]
+  },
+  {
+    "Id": 80,
+    "category": "Medical History",
+    "Question_Number": 16.3,
+    "Question_Text": "Are you currently on any treatment or medication for this condition?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 81,
+    "category": "Medical History",
+    "Question_Number": 16.4,
+    "Question_Text": "When was your last check-up or consultation for this condition?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Within last 6 months",
+      "6 - 12 months ago",
+      "1 - 2 years ago",
+      "More than 2 years ago"
+    ]
+  },
+  {
+    "Id": 82,
+    "category": "Medical History",
+    "Question_Number": 16.5,
+    "Question_Text": "Does this condition impose any current limitations or require special accommodations?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 83,
+    "category": "Insurance History",
+    "Question_Number": 17,
+    "Question_Text": "Do you currently have any life insurance; or have you held a policy in the past?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 84,
+    "category": "Insurance History",
+    "Question_Number": 17.1,
+    "Question_Text": "Please provide details (insurer; coverage amount; year started).",
+    "Answer_Format": "Open Ended",
+    "Answer_Values": []
+  },
+  {
+    "Id": 85,
+    "category": "Insurance History",
+    "Question_Number": 17.2,
+    "Question_Text": "Is this policy still active or was it terminated?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Currently active",
+      "Terminated/Lapsed",
+      "Matured/Expired"
+    ]
+  },
+  {
+    "Id": 86,
+    "category": "Insurance History",
+    "Question_Number": 17.3,
+    "Question_Text": "Have you ever made a claim on any life; disability; or critical illness policy?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 87,
+    "category": "Insurance History",
+    "Question_Number": 17.4,
+    "Question_Text": "If yes; please provide brief details of the claim(s).",
+    "Answer_Format": "Open Ended",
+    "Answer_Values": []
+  },
+  {
+    "Id": 88,
+    "category": "Insurance History",
+    "Question_Number": 17.5,
+    "Question_Text": "Do you have any other life insurance coverage (e.g. through employer)?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 89,
+    "category": "Insurance History",
+    "Question_Number": 18,
+    "Question_Text": "Have you ever had an insurance application declined; postponed; or approved with special terms?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ]
+  },
+  {
+    "Id": 90,
+    "category": "Insurance History",
+    "Question_Number": 18.1,
+    "Question_Text": "What type of policy was involved (life; health; disability; etc.)?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Life Insurance",
+      "Disability/Critical Illness",
+      "Medical/Health Insurance",
+      "Other"
+    ]
+  },
+  {
+    "Id": 91,
+    "category": "Insurance History",
+    "Question_Number": 18.2,
+    "Question_Text": "When did this occur? (Year or approximate date)",
+    "Answer_Format": "Open Ended",
+    "Answer_Values": []
+  },
+  {
+    "Id": 92,
+    "category": "Insurance History",
+    "Question_Number": 18.3,
+    "Question_Text": "Which insurer made that decision (if known)?",
+    "Answer_Format": "Open Ended",
+    "Answer_Values": []
+  },
+  {
+    "Id": 93,
+    "category": "Insurance History",
+    "Question_Number": 18.4,
+    "Question_Text": "What was the outcome of that application?",
+    "Answer_Format": "Multiple Choice",
+    "Answer_Values": [
+      "Declined",
+      "Postponed",
+      "Approved with extra premium",
+      "Approved with exclusions",
+      "Other"
+    ]
+  },
+  {
+    "Id": 94,
+    "category": "Insurance History",
+    "Question_Number": 18.5,
+    "Question_Text": "Were you given a reason or explanation for that decision?",
+    "Answer_Format": "Open Ended",
+    "Answer_Values": []
+  }
+]
