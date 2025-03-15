@@ -1,0 +1,57 @@
+[
+  {
+    "id": "R1",
+    "coverageRange": {
+      "min": 0,
+      "max": 100000
+    },
+    "questions": ["Q1", "Q2"],
+    "rules": [
+      {
+        "questionId": "Q2",
+        "answer": "Yes",
+        "followUpQuestions": ["Q3"]
+      }
+    ]
+  },
+  {
+    "id": "R2",
+    "coverageRange": {
+      "min": 100001,
+      "max": 500000
+    },
+    "questions": ["Q1", "Q2", "Q3", "Q4", "Q5"],
+    "rules": [
+      {
+        "questionId": "Q2",
+        "answer": "Yes",
+        "followUpQuestions": ["Q3"]
+      },
+      {
+        "questionId": "Q3",
+        "answer": "Yes",
+        "followUpQuestions": ["Q3a"]
+      }
+    ]
+  },
+  {
+    "id": "R3",
+    "coverageRange": {
+      "min": 500001,
+      "max": null
+    },
+    "questions": ["Q1", "Q2", "Q3", "Q4", "Q5"],
+    "rules": [
+      {
+        "questionId": "Q2",
+        "answer": "Yes",
+        "followUpQuestions": ["Q3", "Q4", "Q5"]
+      },
+      {
+        "questionId": "Q3",
+        "answer": "Yes",
+        "followUpQuestions": ["Q3a"]
+      }
+    ]
+  }
+] 
