@@ -13,7 +13,10 @@ import {
   FormControl,
   InputLabel,
   Alert,
-  CircularProgress
+  CircularProgress,
+  Card,
+  CardContent,
+  Grid
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { DataGrid } from '@mui/x-data-grid';
@@ -43,46 +46,93 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   marginBottom: theme.spacing(3),
 }));
 
+const ModelCard = styled(Card)(({ theme }) => ({
+  marginBottom: theme.spacing(3),
+  backgroundColor: '#f8f9fa',
+  '& .MuiCardContent-root': {
+    padding: theme.spacing(2),
+  },
+  '& .model-detail': {
+    fontSize: '0.875rem',
+    color: '#666',
+    marginBottom: theme.spacing(0.5),
+    marginLeft: theme.spacing(2)
+  },
+}));
+
 const QuestionContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'flex-start',
-  marginBottom: theme.spacing(2),
+  marginBottom: theme.spacing(1),
+  flexDirection: 'column',
   '& .question-text': {
     flex: 1,
     marginRight: theme.spacing(2),
+    fontSize: '14px',
+    width: '100%',
   },
   '& .answer-input': {
     minWidth: 200,
+    '& .MuiFormControlLabel-label': {
+      fontSize: '14px',
+    }
   },
-  '& .radio-group': {
-    marginTop: theme.spacing(1),
-  },
+  '&.main-question': {
+    flexDirection: 'row',
+    '& .question-text': {
+      width: '60%',
+    }
+  }
 }));
 
 const SimulatorView: React.FC = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [categories, setCategories] = useState<string[]>([]);
+  const [underwritingModels, setUnderwritingModels] = useState<UnderwritingModelRow[]>([]);
+  const [selectedModel, setSelectedModel] = useState<UnderwritingModelRow | null>(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const loadQuestions = async () => {
+    const loadData = async () => {
+      setLoading(true);
       try {
-        const response = await fetch('/data/QuestionsLibrary.json');
-        const data: Question[] = await response.json();
-        setQuestions(data);
+        // Load questions
+        const questionsResponse = await fetch('/data/QuestionsLibrary.json');
+        const questionsData: Question[] = await questionsResponse.json();
+        setQuestions(questionsData);
         
-        // Extract unique categories with proper typing
+        // Extract unique categories
         const uniqueCategories = Array.from(
-          new Set(data.map(q => q.category))
+          new Set(questionsData.map(q => q.category))
         ) as string[];
         setCategories(uniqueCategories);
+
+        // Load underwriting models
+        const modelsResponse = await fetch('/data/UnderwritingModel.json');
+        const modelsData: UnderwritingModelRow[] = await modelsResponse.json();
+        setUnderwritingModels(modelsData);
+        
+        // Set model ID 2 as default
+        const defaultModel = modelsData.find(m => m.Id === 2);
+        if (defaultModel) {
+          setSelectedModel(defaultModel);
+        }
       } catch (error) {
-        console.error('Error loading questions:', error);
+        console.error('Error loading data:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
-    loadQuestions();
+    loadData();
   }, []);
+
+  const handleModelChange = (event: any) => {
+    const selectedId = event.target.value;
+    const model = underwritingModels.find(m => m.Id === selectedId);
+    setSelectedModel(model || null);
+  };
 
   const handleAnswerChange = (questionId: number, value: string) => {
     setAnswers(prev => ({
@@ -108,22 +158,24 @@ const SimulatorView: React.FC = () => {
       
       case 'Multiple Choice':
         return (
-          <FormControl component="fieldset" className="answer-input">
-            <RadioGroup
-              value={answers[question.Id] || ''}
-              onChange={(e) => handleAnswerChange(question.Id, e.target.value)}
-              className="radio-group"
-            >
-              {question.Answer_Values.map((option) => (
-                <FormControlLabel
-                  key={option}
-                  value={option}
-                  control={<Radio />}
-                  label={option}
-                />
-              ))}
-            </RadioGroup>
-          </FormControl>
+          <RadioGroup
+            value={answers[question.Id] || ''}
+            onChange={(e) => handleAnswerChange(question.Id, e.target.value)}
+            className="answer-input"
+          >
+            {question.Answer_Values.map((option) => (
+              <FormControlLabel
+                key={option}
+                value={option}
+                control={<Radio size="small" sx={{ padding: '2px' }} />}
+                label={option}
+                sx={{
+                  margin: 0,
+                  height: '22px'
+                }}
+              />
+            ))}
+          </RadioGroup>
         );
       
       case 'Integer':
@@ -140,10 +192,24 @@ const SimulatorView: React.FC = () => {
         return (
           <TextField
             multiline
-            rows={2}
+            rows={1}
             value={answers[question.Id] || ''}
             onChange={(e) => handleAnswerChange(question.Id, e.target.value)}
             className="answer-input"
+            size="small"
+            sx={{
+              width: '95%',
+              '& .MuiInputBase-root': {
+                fontSize: '14px',
+                padding: 0,
+                height: '24px'
+              },
+              '& .MuiInputBase-input': {
+                padding: '2px 8px',
+                height: '20px !important',
+                overflowY: 'hidden'
+              }
+            }}
           />
         );
       
@@ -163,46 +229,121 @@ const SimulatorView: React.FC = () => {
     });
   };
 
+  const getFilteredQuestions = (category: string) => {
+    return questions
+      .filter(q => {
+        // First filter by category
+        const categoryMatch = q.category === category;
+        
+        // Then filter by Questions_Included if a model is selected
+        const modelMatch = selectedModel 
+          ? selectedModel.Questions_Included.includes(q.Question_Number)
+          : true;
+        
+        return categoryMatch && modelMatch;
+      })
+      .filter(q => isMainQuestion(q.Question_Number))
+      .sort((a, b) => a.Question_Number - b.Question_Number);
+  };
+
   return (
     <Box sx={{ maxWidth: 1400, mx: 'auto', p: 3 }}>
-      <Typography variant="h5" sx={{ mb: 3 }}>
-        Health Questionnaire
-      </Typography>
-
-      {categories.map(category => (
-        <StyledPaper key={category}>
-          <Typography variant="h6" sx={{ mb: 2, color: 'primary.main' }}>
-            {category}
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={8}>
+          <Typography variant="h5" sx={{ mb: 3 }}>
+            Health Questionnaire
           </Typography>
 
-          {questions
-            .filter(q => q.category === category && isMainQuestion(q.Question_Number))
-            .sort((a, b) => a.Question_Number - b.Question_Number)
-            .map(question => (
-              <Box key={question.Id}>
-                <QuestionContainer>
-                  <Typography className="question-text">
-                    {question.Question_Number}. {question.Question_Text}
-                  </Typography>
-                  {renderAnswerInput(question)}
-                </QuestionContainer>
+          <FormControl fullWidth sx={{ mb: 3 }}>
+            <InputLabel>Select Underwriting Model</InputLabel>
+            <Select
+              value={selectedModel?.Id || ''}
+              onChange={handleModelChange}
+              label="Select Underwriting Model"
+            >
+              {underwritingModels.map((model) => (
+                <MenuItem key={model.Id} value={model.Id}>
+                  {`${model.Id} - ${model.Tenant} - ${model.Product}`}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
 
-                <Collapse in={answers[question.Id] === 'Yes'}>
-                  <Box sx={{ pl: 4 }}>
-                    {getSubQuestions(question.Question_Number).map(subQuestion => (
-                      <QuestionContainer key={subQuestion.Id}>
-                        <Typography className="question-text">
-                          {subQuestion.Question_Number}. {subQuestion.Question_Text}
-                        </Typography>
-                        {renderAnswerInput(subQuestion)}
-                      </QuestionContainer>
-                    ))}
+          {categories.map(category => {
+            const filteredQuestions = getFilteredQuestions(category);
+            if (filteredQuestions.length === 0) return null;
+            
+            return (
+              <StyledPaper key={category}>
+                <Typography variant="h6" sx={{ mb: 2, color: 'primary.main' }}>
+                  {category}
+                </Typography>
+
+                {filteredQuestions.map(question => (
+                  <Box key={question.Id}>
+                    <QuestionContainer className="main-question">
+                      <Typography className="question-text">
+                        {question.Question_Number}. {question.Question_Text}
+                      </Typography>
+                      {renderAnswerInput(question)}
+                    </QuestionContainer>
+
+                    <Collapse in={answers[question.Id] === 'Yes'}>
+                      <Box sx={{ 
+                        pl: '12%', 
+                        mt: 1, 
+                        mb: 3,
+                        backgroundColor: '#f5f5f5',
+                        borderRadius: 1,
+                        py: 1
+                      }}>
+                        {getSubQuestions(question.Question_Number).map(subQuestion => (
+                          <QuestionContainer key={subQuestion.Id} sx={{ mb: 0.5 }}>
+                            <Typography className="question-text">
+                              {subQuestion.Question_Number}. {subQuestion.Question_Text}
+                            </Typography>
+                            <Box sx={{ pl: '45%' }}>
+                              {renderAnswerInput(subQuestion)}
+                            </Box>
+                          </QuestionContainer>
+                        ))}
+                      </Box>
+                    </Collapse>
                   </Box>
-                </Collapse>
-              </Box>
-            ))}
-        </StyledPaper>
-      ))}
+                ))}
+              </StyledPaper>
+            );
+          })}
+        </Grid>
+
+        <Grid item xs={12} md={4}>
+          {selectedModel && (
+            <ModelCard>
+              <Typography variant="h6" sx={{ mb: 2 }}>
+                Model Details
+              </Typography>
+              <Typography className="model-detail">
+                <strong>ID:</strong> {selectedModel.Id}
+              </Typography>
+              <Typography className="model-detail">
+                <strong>Tenant:</strong> {selectedModel.Tenant}
+              </Typography>
+              <Typography className="model-detail">
+                <strong>Product:</strong> {selectedModel.Product}
+              </Typography>
+              <Typography className="model-detail">
+                <strong>Age Range:</strong> {selectedModel.Minimum_Age} - {selectedModel.Maximum_Age} years
+              </Typography>
+              <Typography className="model-detail">
+                <strong>Sum Assured Range:</strong> {selectedModel.Minimum_Sum_Assured.toLocaleString()} - {selectedModel.Maximum_Sum_Assured.toLocaleString()}
+              </Typography>
+              <Typography className="model-detail" sx={{ mt: 2 }}>
+                <strong>Questions Included:</strong> {selectedModel.Questions_Included.join(', ')}
+              </Typography>
+            </ModelCard>
+          )}
+        </Grid>
+      </Grid>
     </Box>
   );
 };
