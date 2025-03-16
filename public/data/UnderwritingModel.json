@@ -1,0 +1,77 @@
+[
+  {
+    "Id": 1,
+    "Tenant": "Liberty South Africa",
+    "Currency": "ZAR",
+    "Product": "Global Protector - South Africa",
+    "Minimum_Age": 18,
+    "Maximum_Age": 65,
+    "Minimum_Sum_Assured": 300000,
+    "Maximum_Sum_Assured": 999999.99,
+    "Questions_Included": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "Id": 2,
+    "Tenant": "Liberty South Africa",
+    "Currency": "ZAR",
+    "Product": "Global Protector - South Africa",
+    "Minimum_Age": 18,
+    "Maximum_Age": 65,
+    "Minimum_Sum_Assured": 1000000,
+    "Maximum_Sum_Assured": 5000000,
+    "Questions_Included": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  {
+    "Id": 3,
+    "Tenant": "Liberty Kenya",
+    "Currency": "KES",
+    "Product": "Global Protector - Kenya",
+    "Minimum_Age": 18,
+    "Maximum_Age": 65,
+    "Minimum_Sum_Assured": 7000000,
+    "Maximum_Sum_Assured": 35000000,
+    "Questions_Included": [
+      1,
+      2,
+      3,
+      8,
+      9,
+      10,
+      11,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
+  }
+]

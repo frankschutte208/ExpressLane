@@ -89,8 +89,8 @@ const Layout: React.FC<LayoutProps> = ({ children, currentTab, onTabChange }) =>
           onChange={onTabChange}
           centered
         >
-          <StyledTab label="Tables" />
-          <StyledTab label="Rules" />
+          <StyledTab label="Questions" />
+          <StyledTab label="Underwriting Models" />
           <StyledTab label="Simulator" />
         </NavigationTabs>
 

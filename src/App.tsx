@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Layout from './components/Layout';
-import TablesView from './components/TablesView';
+import QuestionsView from './components/QuestionsView';
 import SimulatorView from './components/SimulatorView';
+import UnderwritingModelsView from './components/UnderwritingModelsView';
 import theme from './styles/theme';
 
 const App: React.FC = () => {
@@ -29,10 +30,10 @@ const App: React.FC = () => {
   return (
     <Layout currentTab={currentTab} onTabChange={handleTabChange}>
       <Routes>
-        <Route path="/tables" element={<TablesView />} />
-        <Route path="/rules" element={<div>Rules View (Coming Soon)</div>} />
+        <Route path="/tables" element={<QuestionsView />} />
+        <Route path="/rules" element={<UnderwritingModelsView />} />
         <Route path="/simulator" element={<SimulatorView />} />
-        <Route path="/" element={<TablesView />} />
+        <Route path="/" element={<QuestionsView />} />
       </Routes>
     </Layout>
   );

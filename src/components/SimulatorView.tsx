@@ -11,9 +11,12 @@ import {
   MenuItem,
   TextField,
   FormControl,
-  InputLabel
+  InputLabel,
+  Alert,
+  CircularProgress
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { DataGrid } from '@mui/x-data-grid';
 
 interface Question {
   Id: number;
@@ -22,6 +25,17 @@ interface Question {
   Question_Text: string;
   Answer_Format: string;
   Answer_Values: string[];
+}
+
+interface UnderwritingModelRow {
+  Id: number;
+  Tenant: string;
+  Product: string;
+  Minimum_Age: number;
+  Maximum_Age: number;
+  Minimum_Sum_Assured: number;
+  Maximum_Sum_Assured: number;
+  Questions_Included: number[];
 }
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
