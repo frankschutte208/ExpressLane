@@ -1,8 +1,9 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-echo ExpressLane - Git Backup Script
-echo =============================
+echo ================================================
+echo             ExpressLane Backup Tool
+echo ================================================
 echo.
 
 REM Check if we're in a git repository
@@ -11,76 +12,90 @@ if not exist ".git" (
     exit /b 1
 )
 
-REM Check for node_modules
-if exist "node_modules" (
-    echo Warning: node_modules directory detected
-    echo This directory should be excluded from git (check .gitignore)
-    echo.
-)
+REM Get last commit date and message
+for /f "tokens=*" %%a in ('git log -1 --format^="%%cd" --date^=format:"%%Y-%%m-%%d %%H:%%M:%%S"') do set LAST_BACKUP=%%a
+for /f "tokens=*" %%a in ('git log -1 --format^="%%s"') do set LAST_MESSAGE=%%a
 
 REM Get current version
 for /f "tokens=*" %%a in ('git describe --abbrev^=0 --tags 2^>^&1') do set CURRENT_VERSION=%%a
 if "!CURRENT_VERSION!"=="" (
-    echo No version tags found. This will be the first version.
-) else (
-    echo Current version: !CURRENT_VERSION!
+    set CURRENT_VERSION=No version tags yet
 )
 
-REM Get current status
-git status
-echo.
-echo Current Status ^(above^)
+echo Last Backup Information:
+echo -----------------------
+echo Date: !LAST_BACKUP!
+echo Message: !LAST_MESSAGE!
+echo Current Version: !CURRENT_VERSION!
 echo.
 
-REM Ask for version number
-set /p VERSION="Enter new version number (e.g., 1.0.0): "
-if "!VERSION!"=="" (
-    echo Error: Version number is required
-    exit /b 1
+REM Show changed files
+echo Changed Files:
+echo -------------
+git status -s
+echo.
+
+REM Ask if user wants to proceed with backup
+set /p PROCEED="Do you want to backup these changes? (y/n): "
+if /i not "!PROCEED!"=="y" (
+    echo Backup cancelled.
+    exit /b 0
 )
+
+REM Ask for version number with suggestion
+set "SUGGESTED_VERSION=1.0.0"
+if not "!CURRENT_VERSION!"=="No version tags yet" (
+    for /f "tokens=1,2,3 delims=." %%a in ("!CURRENT_VERSION:v=!") do (
+        set /a PATCH=%%c+1
+        set "SUGGESTED_VERSION=%%a.%%b.!PATCH!"
+    )
+)
+echo.
+echo Suggested version: !SUGGESTED_VERSION!
+set /p VERSION="Enter new version number [!SUGGESTED_VERSION!]: "
+if "!VERSION!"=="" set "VERSION=!SUGGESTED_VERSION!"
 
 REM Ask for description
-set /p DESC="Enter description of changes: "
+echo.
+echo Enter a brief description of your changes
+echo Example: "Updated QuestionsView and fixed layout issues"
+set /p DESC="Description: "
 if "!DESC!"=="" (
     echo Error: Description is required
     exit /b 1
 )
 
 echo.
-echo Preparing backup...
+echo Summary of Backup:
+echo -----------------
+echo Version: v!VERSION!
+echo Description: !DESC!
 echo.
-
-REM Add all files except node_modules
-echo Adding files to git...
-git add .
-
-REM Create commit
-git commit -m "v!VERSION! - !DESC!"
-
-REM Create tag with description
-git tag -a v!VERSION! -m "Version !VERSION! - !DESC!"
-
-echo.
-echo Backup complete:
-echo - Previous version: !CURRENT_VERSION!
-echo - New version: v!VERSION!
-echo - Description: !DESC!
-echo.
-
-REM Ask if user wants to push to remote
-set /p PUSH="Push to remote repository? (y/n): "
-if /i "!PUSH!"=="y" (
-    echo.
-    echo Pushing to remote...
-    git push
-    git push --tags
-    echo.
-    echo Push complete
-) else (
-    echo.
-    echo Changes are committed locally but not pushed to remote
+set /p CONFIRM="Proceed with backup? (y/n): "
+if /i not "!CONFIRM!"=="y" (
+    echo Backup cancelled.
+    exit /b 0
 )
 
 echo.
-echo Backup process finished
+echo Processing backup...
+echo.
+
+REM Add and commit changes
+git add .
+git commit -m "v!VERSION! - !DESC!"
+git tag -a v!VERSION! -m "Version !VERSION! - !DESC!"
+
+REM Push changes
+echo.
+git push origin main
+git push --tags
+
+echo.
+echo ================================================
+echo Backup completed successfully!
+echo - New version: v!VERSION!
+echo - Description: !DESC!
+echo ================================================
+echo.
 pause 
