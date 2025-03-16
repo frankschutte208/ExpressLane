@@ -49,9 +49,13 @@ const QuestionContainer = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   '& .question-text': {
     flex: 1,
+    marginRight: theme.spacing(2),
   },
   '& .answer-input': {
     minWidth: 200,
+  },
+  '& .radio-group': {
+    marginTop: theme.spacing(1),
   },
 }));
 
@@ -104,19 +108,21 @@ const SimulatorView: React.FC = () => {
       
       case 'Multiple Choice':
         return (
-          <FormControl className="answer-input">
-            <InputLabel>Select Answer</InputLabel>
-            <Select
+          <FormControl component="fieldset" className="answer-input">
+            <RadioGroup
               value={answers[question.Id] || ''}
               onChange={(e) => handleAnswerChange(question.Id, e.target.value)}
-              label="Select Answer"
+              className="radio-group"
             >
               {question.Answer_Values.map((option) => (
-                <MenuItem key={option} value={option}>
-                  {option}
-                </MenuItem>
+                <FormControlLabel
+                  key={option}
+                  value={option}
+                  control={<Radio />}
+                  label={option}
+                />
               ))}
-            </Select>
+            </RadioGroup>
           </FormControl>
         );
       
@@ -158,7 +164,7 @@ const SimulatorView: React.FC = () => {
   };
 
   return (
-    <Box sx={{ maxWidth: 1200, mx: 'auto', p: 3 }}>
+    <Box sx={{ maxWidth: 1400, mx: 'auto', p: 3 }}>
       <Typography variant="h5" sx={{ mb: 3 }}>
         Health Questionnaire
       </Typography>

@@ -66,6 +66,23 @@ app.put('/api/questions', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-}); 
+// Function to start server with port fallback
+const startServer = (port) => {
+  try {
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    }).on('error', (err) => {
+      if (err.code === 'EADDRINUSE') {
+        console.log(`Port ${port} is busy, trying ${port + 1}...`);
+        startServer(port + 1);
+      } else {
+        console.error('Server error:', err);
+      }
+    });
+  } catch (err) {
+    console.error('Failed to start server:', err);
+  }
+};
+
+// Start server with initial port
+startServer(PORT); 

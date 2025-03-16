@@ -73,5 +73,22 @@
       19,
       20
     ]
+  },
+  {
+    "Id": 4,
+    "Tenant": "SBIB South Africa",
+    "Currency": "ZAR",
+    "Product": "Flexi-Protect",
+    "Minimum_Age": 18,
+    "Maximum_Age": 65,
+    "Minimum_Sum_Assured": 50000,
+    "Maximum_Sum_Assured": 500000,
+    "Questions_Included": [
+      1,
+      2,
+      4,
+      7,
+      11
+    ]
   }
 ]

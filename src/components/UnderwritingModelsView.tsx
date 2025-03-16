@@ -6,7 +6,9 @@ import {
   Typography,
   CircularProgress,
   Alert,
-  Snackbar
+  Snackbar,
+  Button,
+  Tooltip
 } from '@mui/material';
 import { DataGrid, GridRowModel } from '@mui/x-data-grid';
 import { styled } from '@mui/material/styles';
@@ -134,6 +136,49 @@ const UnderwritingModelsView: React.FC = () => {
     }
   };
 
+  const handleAddRow = async () => {
+    try {
+      // Get current data
+      const response = await fetch(`${API_BASE_URL}/underwriting-models`);
+      const data = await response.json();
+      
+      // Create new row with default values
+      const newRow: UnderwritingModelRow = {
+        Id: Math.max(...data.map((row: UnderwritingModelRow) => row.Id), 0) + 1,
+        Tenant: '',
+        Currency: '',
+        Product: '',
+        Minimum_Age: 0,
+        Maximum_Age: 0,
+        Minimum_Sum_Assured: 0,
+        Maximum_Sum_Assured: 0,
+        Questions_Included: []
+      };
+      
+      // Add new row to data
+      const updatedData = [...data, newRow];
+
+      // Save back to file through API
+      const saveResponse = await fetch(`${API_BASE_URL}/underwriting-models`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedData)
+      });
+
+      if (!saveResponse.ok) {
+        throw new Error('Failed to add new row');
+      }
+
+      // Update the local state
+      setRows(updatedData);
+      setSaveError(null);
+    } catch (error) {
+      setSaveError(error instanceof Error ? error.message : 'Failed to add new row');
+    }
+  };
+
   useEffect(() => {
     const loadData = async () => {
       setLoading(true);
@@ -184,6 +229,18 @@ const UnderwritingModelsView: React.FC = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             sx={{ width: 300 }}
           />
+          <Button 
+            variant="contained" 
+            onClick={handleAddRow}
+            sx={{ 
+              minWidth: '40px',
+              height: '40px',
+              padding: '0',
+              fontSize: '20px'
+            }}
+          >
+            +
+          </Button>
         </ControlsContainer>
 
         <Box sx={{ height: 600, width: '100%', position: 'relative' }}>
