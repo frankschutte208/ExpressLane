@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, AppBar, Toolbar, Typography, Tabs, Tab, Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import FloatingLogo from './FloatingLogo';
 
 const StyledAppBar = styled(AppBar)({
   backgroundColor: '#003087', // Liberty's primary dark blue
@@ -68,11 +69,11 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, currentTab, onTabChange }) => {
   return (
-    <Box>
+    <Box sx={{ backgroundColor: '#808080', minHeight: '100vh' }}>
       <StyledAppBar>
         <StyledToolbar>
           <AppTitle>
-            Express Lane Underwriting - Prototype
+            Express Lane Underwriting - <span style={{ color: '#FDB813' }}>Prototype</span>
           </AppTitle>
           <LogoContainer>
             <Logo 
@@ -98,6 +99,7 @@ const Layout: React.FC<LayoutProps> = ({ children, currentTab, onTabChange }) =>
           {children}
         </ContentArea>
       </Container>
+      <FloatingLogo />
     </Box>
   );
 };

@@ -4,7 +4,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.API_PORT || 3006;
 
 app.use(cors());
 app.use(express.json());
@@ -12,77 +12,71 @@ app.use(express.json());
 // Serve static files from the public directory
 app.use(express.static('public'));
 
-// GET endpoint to read the underwriting model data
-app.get('/api/underwriting-models', async (req, res) => {
+// Helper function to read JSON file
+const readJsonFile = async (filePath) => {
   try {
-    const data = await fs.readFile(path.join(__dirname, 'public', 'data', 'UnderwritingModel.json'), 'utf8');
-    res.json(JSON.parse(data));
+    const data = await fs.readFile(filePath, 'utf8');
+    return JSON.parse(data);
   } catch (error) {
-    console.error('Error reading file:', error);
-    res.status(500).json({ error: 'Failed to read data' });
-  }
-});
-
-// PUT endpoint to update the underwriting model data
-app.put('/api/underwriting-models', async (req, res) => {
-  try {
-    const updatedData = req.body;
-    await fs.writeFile(
-      path.join(__dirname, 'public', 'data', 'UnderwritingModel.json'),
-      JSON.stringify(updatedData, null, 2),
-      'utf8'
-    );
-    res.json({ message: 'Data updated successfully' });
-  } catch (error) {
-    console.error('Error writing file:', error);
-    res.status(500).json({ error: 'Failed to update data' });
-  }
-});
-
-// GET endpoint to read the questions data
-app.get('/api/questions', async (req, res) => {
-  try {
-    const data = await fs.readFile(path.join(__dirname, 'public', 'data', 'QuestionsLibrary.json'), 'utf8');
-    res.json(JSON.parse(data));
-  } catch (error) {
-    console.error('Error reading file:', error);
-    res.status(500).json({ error: 'Failed to read data' });
-  }
-});
-
-// PUT endpoint to update the questions data
-app.put('/api/questions', async (req, res) => {
-  try {
-    const updatedData = req.body;
-    await fs.writeFile(
-      path.join(__dirname, 'public', 'data', 'QuestionsLibrary.json'),
-      JSON.stringify(updatedData, null, 2),
-      'utf8'
-    );
-    res.json({ message: 'Data updated successfully' });
-  } catch (error) {
-    console.error('Error writing file:', error);
-    res.status(500).json({ error: 'Failed to update data' });
-  }
-});
-
-// Function to start server with port fallback
-const startServer = (port) => {
-  try {
-    app.listen(port, () => {
-      console.log(`Server is running on port ${port}`);
-    }).on('error', (err) => {
-      if (err.code === 'EADDRINUSE') {
-        console.log(`Port ${port} is busy, trying ${port + 1}...`);
-        startServer(port + 1);
-      } else {
-        console.error('Server error:', err);
-      }
-    });
-  } catch (err) {
-    console.error('Failed to start server:', err);
+    console.error(`Error reading ${filePath}:`, error);
+    throw error;
   }
 };
 
-// Start server with initial port
-startServer(PORT); 
+// Helper function to write JSON file
+const writeJsonFile = async (filePath, data) => {
+  try {
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+  } catch (error) {
+    console.error(`Error writing ${filePath}:`, error);
+    throw error;
+  }
+};
+
+// GET endpoint for questions
+app.get('/api/questions', async (req, res) => {
+  try {
+    const data = await readJsonFile(path.join(__dirname, 'public/data/QuestionsLibrary.json'));
+    res.json(data);
+  } catch (error) {
+    console.error('Error in GET /api/questions:', error);
+    res.status(500).json({ error: 'Failed to read questions data' });
+  }
+});
+
+// PUT endpoint for questions
+app.put('/api/questions', async (req, res) => {
+  try {
+    await writeJsonFile(path.join(__dirname, 'public/data/QuestionsLibrary.json'), req.body);
+    res.json({ message: 'Questions updated successfully' });
+  } catch (error) {
+    console.error('Error in PUT /api/questions:', error);
+    res.status(500).json({ error: 'Failed to update questions data' });
+  }
+});
+
+// GET endpoint for underwriting models
+app.get('/api/underwriting-models', async (req, res) => {
+  try {
+    const data = await readJsonFile(path.join(__dirname, 'public/data/UnderwritingModel.json'));
+    res.json(data);
+  } catch (error) {
+    console.error('Error in GET /api/underwriting-models:', error);
+    res.status(500).json({ error: 'Failed to read underwriting models data' });
+  }
+});
+
+// PUT endpoint for underwriting models
+app.put('/api/underwriting-models', async (req, res) => {
+  try {
+    await writeJsonFile(path.join(__dirname, 'public/data/UnderwritingModel.json'), req.body);
+    res.json({ message: 'Underwriting models updated successfully' });
+  } catch (error) {
+    console.error('Error in PUT /api/underwriting-models:', error);
+    res.status(500).json({ error: 'Failed to update underwriting models data' });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+}); 

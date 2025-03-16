@@ -37,7 +37,7 @@ interface UnderwritingModelRow {
   Questions_Included: number[];
 }
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = 'http://localhost:3006/api';
 
 const UnderwritingModelsView: React.FC = () => {
   const [rows, setRows] = useState<UnderwritingModelRow[]>([]);
