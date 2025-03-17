@@ -8,7 +8,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 2,
@@ -22,7 +24,9 @@
       "E-cigarettes/Vape",
       "Smokeless/chewing tobacco",
       "Other"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 3,
@@ -35,7 +39,9 @@
       "Light (1-5 per day)",
       "Moderate (6-20 per day)",
       "Heavy (>20 per day)"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 4,
@@ -48,7 +54,9 @@
       "1-5 years",
       "6-10 years",
       "More than 10 years"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 5,
@@ -59,7 +67,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 6,
@@ -71,7 +81,9 @@
       "Minor difficulties",
       "Moderate difficulties",
       "Significant impact on health"
-    ]
+    ],
+    "Score": 2,
+    "Decision": ""
   },
   {
     "Id": 7,
@@ -82,7 +94,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 8,
@@ -96,7 +110,9 @@
       "8-14 units",
       "15-21 units",
       "More than 21 units"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 9,
@@ -107,7 +123,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 10,
@@ -118,7 +136,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 11,
@@ -129,7 +149,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 12,
@@ -142,7 +164,9 @@
       "Regular drinker (moderate)",
       "Heavy drinker",
       "Former drinker (quit)"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 13,
@@ -153,7 +177,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 14,
@@ -167,7 +193,9 @@
       "Opiates/Opioids",
       "Hallucinogens",
       "Other"
-    ]
+    ],
+    "Score": 2,
+    "Decision": ""
   },
   {
     "Id": 15,
@@ -180,7 +208,9 @@
       "Rarely (few times a year)",
       "Occasionally (monthly)",
       "Regularly (weekly or more often)"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 16,
@@ -191,7 +221,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 17,
@@ -205,7 +237,9 @@
       "6-12 months ago",
       "More than a year ago",
       "Never used"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 18,
@@ -216,7 +250,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 2,
+    "Decision": "Decline Coverage"
   },
   {
     "Id": 19,
@@ -224,7 +260,9 @@
     "Question_Number": 4,
     "Question_Text": "What is your height in centimetres?",
     "Answer_Format": "Integer",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 20,
@@ -232,7 +270,9 @@
     "Question_Number": 5,
     "Question_Text": "What is your weight in Kilograms?",
     "Answer_Format": "Integer",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 21,
@@ -243,7 +283,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 22,
@@ -255,7 +297,9 @@
       "Intentional (diet/exercise)",
       "Unintentional (health/unknown)",
       "Not applicable (no change)"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 23,
@@ -266,7 +310,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 24,
@@ -282,7 +328,9 @@
       "Heart murmur or valve disorder",
       "Irregular heartbeat (arrhythmia)",
       "Other"
-    ]
+    ],
+    "Score": 2,
+    "Decision": ""
   },
   {
     "Id": 25,
@@ -295,7 +343,9 @@
       "1-5 years ago",
       "More than 5 years ago",
       "Not sure"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 26,
@@ -309,7 +359,9 @@
       "Lifestyle changes (diet/exercise)",
       "Surgery or procedure",
       "Other"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 27,
@@ -323,7 +375,9 @@
       "Managed with some difficulty",
       "Active or uncontrolled",
       "Other"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 28,
@@ -336,7 +390,9 @@
       "Mild impact",
       "Moderate impact",
       "Severe impact"
-    ]
+    ],
+    "Score": 0,
+    "Decision": "Exclude any claims related to heart condition"
   },
   {
     "Id": 29,
@@ -347,7 +403,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 30,
@@ -361,7 +419,9 @@
       "Tuberculosis or chronic infection",
       "Sleep apnea",
       "Other"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 31,
@@ -369,7 +429,9 @@
     "Question_Number": 8.2,
     "Question_Text": "When were you diagnosed and at what age (if known)?",
     "Answer_Format": "Open Ended",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 32,
@@ -383,7 +445,9 @@
       "Lifestyle changes",
       "Surgery/hospitalization",
       "Other"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 33,
@@ -396,7 +460,9 @@
       "Infrequent/mild",
       "Moderate",
       "Frequent/severe"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 34,
@@ -409,7 +475,9 @@
       "Mild limitation",
       "Moderate limitation",
       "Severe limitation"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 35,
@@ -420,7 +488,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 36,
@@ -438,7 +508,9 @@
       "Kidney disease/stones",
       "Bladder/urinary disorder",
       "Other"
-    ]
+    ],
+    "Score": 2,
+    "Decision": ""
   },
   {
     "Id": 37,
@@ -451,7 +523,9 @@
       "1-5 years ago",
       "More than 5 years ago",
       "Resolved/Ongoing"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 38,
@@ -465,7 +539,9 @@
       "Surgery/Hospitalization",
       "Specialist care",
       "Other/None"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 39,
@@ -479,7 +555,9 @@
       "Active",
       "Worsening/progressive",
       "Unsure"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 40,
@@ -492,7 +570,9 @@
       "Mild impact",
       "Moderate impact",
       "Severe impact"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 41,
@@ -503,7 +583,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 42,
@@ -518,7 +600,9 @@
       "Chronic migraines/headaches",
       "Neuropathy/nerve disorder",
       "Other"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 43,
@@ -530,7 +614,9 @@
       "Within the last year",
       "1-5 years ago",
       "More than 5 years ago"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 44,
@@ -544,7 +630,9 @@
       "Therapy/Rehab",
       "No treatment",
       "Other"
-    ]
+    ],
+    "Score": 3,
+    "Decision": ""
   },
   {
     "Id": 45,
@@ -558,7 +646,9 @@
       "Occasional symptoms",
       "Frequent/Progressive",
       "Other"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 46,
@@ -570,7 +660,9 @@
       "No limitations",
       "Some limitations",
       "Significant limitations"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 47,
@@ -581,7 +673,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 48,
@@ -596,7 +690,9 @@
       "Bone/joint injury/disorder",
       "Muscle/tendon disorder",
       "Other"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 49,
@@ -609,7 +705,9 @@
       "6 months - 2 years",
       "Over 2 years",
       "On/off (recurrent episodes)"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 50,
@@ -624,7 +722,9 @@
       "Surgery",
       "Lifestyle modifications",
       "Other/No treatment"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 51,
@@ -637,7 +737,9 @@
       "Intermittent (occasional flare-ups)",
       "Chronic but stable",
       "Chronic and worsening"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 52,
@@ -650,7 +752,9 @@
       "Mild impact",
       "Moderate impact",
       "Severe impact"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 53,
@@ -661,7 +765,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 54,
@@ -675,7 +781,9 @@
       "Bipolar disorder",
       "Stress/trauma (PTSD)",
       "Other"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 55,
@@ -689,7 +797,9 @@
       "Hospitalization",
       "No formal treatment",
       "Other"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 56,
@@ -703,7 +813,9 @@
       "Ongoing (continuous management)",
       "Severe/Uncontrolled",
       "Other"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 57,
@@ -716,7 +828,9 @@
       "3 - 12 months ago",
       "1 - 5 years ago",
       "More than 5 years ago"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 58,
@@ -729,7 +843,9 @@
       "Mild impact",
       "Moderate impact",
       "Severe impact"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 59,
@@ -740,7 +856,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 60,
@@ -755,7 +873,9 @@
       "Gestational diabetes",
       "Thyroid disorder",
       "Other endocrine disorder"
-    ]
+    ],
+    "Score": 2,
+    "Decision": ""
   },
   {
     "Id": 61,
@@ -767,7 +887,9 @@
       "Within the last year",
       "1 - 5 years ago",
       "More than 5 years ago"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 62,
@@ -782,7 +904,9 @@
       "Thyroid medication",
       "No treatment",
       "Other"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 63,
@@ -790,7 +914,9 @@
     "Question_Number": 13.4,
     "Question_Text": "If diabetic/thyroid; what is your last known HbA1c or thyroid test result?",
     "Answer_Format": "Open Ended",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 64,
@@ -804,7 +930,9 @@
       "Moderately controlled",
       "Poorly controlled",
       "Complications present"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 65,
@@ -815,7 +943,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 3,
+    "Decision": ""
   },
   {
     "Id": 66,
@@ -823,7 +953,9 @@
     "Question_Number": 14.1,
     "Question_Text": "What type of cancer/tumor were you diagnosed with?",
     "Answer_Format": "Open Ended",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 67,
@@ -831,7 +963,9 @@
     "Question_Number": 14.2,
     "Question_Text": "When were you diagnosed and what was the stage/grade (if known)?",
     "Answer_Format": "Open Ended",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": "Exclude any claims related to cancer / tumors"
   },
   {
     "Id": 68,
@@ -846,7 +980,9 @@
       "Medication/hormone therapy",
       "No treatment",
       "Other"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 69,
@@ -860,7 +996,9 @@
       "Active (under treatment)",
       "Stable/chronic",
       "Other"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 70,
@@ -874,7 +1012,9 @@
       "Abnormal follow-up but no confirmed recurrence",
       "Recurrence occurred",
       "Still under initial treatment"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 71,
@@ -885,7 +1025,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 5,
+    "Decision": "Decline Coverage"
   },
   {
     "Id": 72,
@@ -898,7 +1040,9 @@
       "Chronic Hepatitis B",
       "Chronic Hepatitis C",
       "Other immunodeficiency"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 73,
@@ -906,7 +1050,9 @@
     "Question_Number": 15.2,
     "Question_Text": "When were you diagnosed; and what treatment are you on?",
     "Answer_Format": "Open Ended",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 74,
@@ -914,7 +1060,9 @@
     "Question_Number": 15.3,
     "Question_Text": "If HIV; do you know your latest CD4 count and viral load? (Or relevant test for other conditions.)",
     "Answer_Format": "Open Ended",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": "Decline Coverage"
   },
   {
     "Id": 75,
@@ -928,7 +1076,9 @@
       "Active",
       "Worsening",
       "Not sure"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 76,
@@ -939,7 +1089,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 77,
@@ -950,7 +1102,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 78,
@@ -958,7 +1112,9 @@
     "Question_Number": 16.1,
     "Question_Text": "Please provide details of any other condition; injury; or surgery/hospitalization.",
     "Answer_Format": "Open Ended",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 79,
@@ -973,7 +1129,9 @@
       "still under treatment",
       "Some ongoing effects",
       "Not applicable"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 80,
@@ -984,7 +1142,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 81,
@@ -997,7 +1157,9 @@
       "6 - 12 months ago",
       "1 - 2 years ago",
       "More than 2 years ago"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 82,
@@ -1008,7 +1170,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 83,
@@ -1019,7 +1183,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 1,
+    "Decision": ""
   },
   {
     "Id": 84,
@@ -1027,7 +1193,9 @@
     "Question_Number": 17.1,
     "Question_Text": "Please provide details (insurer; coverage amount; year started).",
     "Answer_Format": "Open Ended",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 85,
@@ -1039,7 +1207,9 @@
       "Currently active",
       "Terminated/Lapsed",
       "Matured/Expired"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 86,
@@ -1050,7 +1220,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 87,
@@ -1058,7 +1230,9 @@
     "Question_Number": 17.4,
     "Question_Text": "If yes; please provide brief details of the claim(s).",
     "Answer_Format": "Open Ended",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 88,
@@ -1069,7 +1243,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 89,
@@ -1080,7 +1256,9 @@
     "Answer_Values": [
       "Yes",
       "No"
-    ]
+    ],
+    "Score": 2,
+    "Decision": ""
   },
   {
     "Id": 90,
@@ -1093,7 +1271,9 @@
       "Disability/Critical Illness",
       "Medical/Health Insurance",
       "Other"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 91,
@@ -1101,7 +1281,9 @@
     "Question_Number": 18.2,
     "Question_Text": "When did this occur? (Year or approximate date)",
     "Answer_Format": "Open Ended",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 92,
@@ -1109,7 +1291,9 @@
     "Question_Number": 18.3,
     "Question_Text": "Which insurer made that decision (if known)?",
     "Answer_Format": "Open Ended",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 93,
@@ -1123,7 +1307,9 @@
       "Approved with extra premium",
       "Approved with exclusions",
       "Other"
-    ]
+    ],
+    "Score": 0,
+    "Decision": ""
   },
   {
     "Id": 94,
@@ -1131,6 +1317,70 @@
     "Question_Number": 18.5,
     "Question_Text": "Were you given a reason or explanation for that decision?",
     "Answer_Format": "Open Ended",
-    "Answer_Values": []
+    "Answer_Values": [],
+    "Score": 0,
+    "Decision": ""
+  },
+  {
+    "Id": 95,
+    "category": "Pandemic",
+    "Question_Number": 19,
+    "Question_Text": "Have you tested positive Covid19, or experienced the symptoms of Covid19",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [],
+    "Score": 1,
+    "Decision": ""
+  },
+  {
+    "Id": 96,
+    "category": "Pandemic",
+    "Question_Number": 19.1,
+    "Question_Text": "Were you hospitalised?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ],
+    "Score": 0,
+    "Decision": ""
+  },
+  {
+    "Id": 97,
+    "category": "Insurance History",
+    "Question_Number": 20,
+    "Question_Text": "Have you ever been refused long-term life insurance cover or offered cover on special terms?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ],
+    "Score": 99,
+    "Decision": "Decline Coverage"
+  },
+  {
+    "Id": 98,
+    "category": "Medical History",
+    "Question_Number": 21,
+    "Question_Text": "Have you been diagnosed with the following: TB, any form of cancer or tumours, epilepsy, any heart, liver, lung, or blood disorder, HIV, Stroke or other brain disorder, raised blood sugar or diabetes, Psychiatric disorder including alcohol or any drug use.",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ],
+    "Score": 99,
+    "Decision": "Decline Coverage"
+  },
+  {
+    "Id": 99,
+    "category": "Medical History",
+    "Question_Number": 22,
+    "Question_Text": "Have you ever been hospitalised for longer than 7 days in the last 3 years?",
+    "Answer_Format": "Yes/No",
+    "Answer_Values": [
+      "Yes",
+      "No"
+    ],
+    "Score": 99,
+    "Decision": "Decline Coverage"
   }
 ]

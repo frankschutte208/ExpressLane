@@ -16,7 +16,9 @@ import {
   CircularProgress,
   Card,
   CardContent,
-  Grid
+  Grid,
+  Divider,
+  Button
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { DataGrid } from '@mui/x-data-grid';
@@ -28,6 +30,8 @@ interface Question {
   Question_Text: string;
   Answer_Format: string;
   Answer_Values: string[];
+  Score: number;
+  Decision: string;
 }
 
 interface UnderwritingModelRow {
@@ -132,6 +136,8 @@ const SimulatorView: React.FC = () => {
     const selectedId = event.target.value;
     const model = underwritingModels.find(m => m.Id === selectedId);
     setSelectedModel(model || null);
+    // Reset answers when model changes
+    setAnswers({});
   };
 
   const handleAnswerChange = (questionId: number, value: string) => {
@@ -246,13 +252,76 @@ const SimulatorView: React.FC = () => {
       .sort((a, b) => a.Question_Number - b.Question_Number);
   };
 
+  // Calculate underwriting scores by category
+  const calculateUnderwritingScores = () => {
+    const scoresByCategory: Record<string, number> = {};
+    let totalScore = 0;
+    
+    // Initialize categories with 0 scores
+    categories.forEach(category => {
+      scoresByCategory[category] = 0;
+    });
+    
+    // Calculate scores for answered questions
+    Object.entries(answers).forEach(([questionIdStr, answer]) => {
+      const questionId = parseInt(questionIdStr);
+      const question = questions.find(q => q.Id === questionId);
+      
+      if (question && 
+          ((question.Answer_Format === 'Yes/No' && answer === 'Yes') || 
+           (question.Answer_Format !== 'Yes/No' && answer))) {
+        const category = question.category;
+        scoresByCategory[category] = (scoresByCategory[category] || 0) + question.Score;
+        totalScore += question.Score;
+      }
+    });
+    
+    return { scoresByCategory, totalScore };
+  };
+
+  // Get decisions for questions answered "Yes" that have a non-empty Decision field
+  const getDecisions = () => {
+    const decisions: Array<{ questionText: string; decision: string }> = [];
+    
+    Object.entries(answers).forEach(([questionIdStr, answer]) => {
+      const questionId = parseInt(questionIdStr);
+      const question = questions.find(q => q.Id === questionId);
+      
+      if (question && 
+          answer === 'Yes' && 
+          question.Decision && 
+          question.Decision.trim() !== '') {
+        decisions.push({
+          questionText: question.Question_Text,
+          decision: question.Decision
+        });
+      }
+    });
+    
+    return decisions;
+  };
+
+  // Add reset handler
+  const handleReset = () => {
+    setAnswers({});
+  };
+
   return (
     <Box sx={{ maxWidth: 1400, mx: 'auto', p: 3 }}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={8}>
-          <Typography variant="h5" sx={{ mb: 3 }}>
-            Health Questionnaire
-          </Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
+            <Typography variant="h5">
+              Health Questionnaire
+            </Typography>
+            <Button 
+              variant="text" 
+              color="primary" 
+              onClick={handleReset}
+            >
+              Reset Questionnaire
+            </Button>
+          </Box>
 
           <FormControl fullWidth sx={{ mb: 3 }}>
             <InputLabel>Select Underwriting Model</InputLabel>
@@ -340,6 +409,73 @@ const SimulatorView: React.FC = () => {
               <Typography className="model-detail" sx={{ mt: 2 }}>
                 <strong>Questions Included:</strong> {selectedModel.Questions_Included.join(', ')}
               </Typography>
+              
+              <Divider sx={{ my: 2 }} />
+              
+              <Typography variant="h6" sx={{ mb: 1 }}>
+                Underwriting Score
+              </Typography>
+              
+              {(() => {
+                const { scoresByCategory, totalScore } = calculateUnderwritingScores();
+                return (
+                  <>
+                    {Object.entries(scoresByCategory)
+                      .filter(([category, score]) => score > 0)
+                      .map(([category, score]) => (
+                        <Typography key={category} className="model-detail">
+                          <strong>{category}:</strong> {score}
+                        </Typography>
+                      ))}
+                    
+                    {totalScore > 0 ? (
+                      <Typography className="model-detail" sx={{ 
+                        mt: 1, 
+                        fontWeight: 'bold',
+                        color: totalScore > 10 ? 'error.main' : 'inherit'
+                      }}>
+                        <strong>Total Score:</strong> {totalScore}
+                      </Typography>
+                    ) : (
+                      <Typography className="model-detail" sx={{ fontStyle: 'italic', color: 'text.secondary' }}>
+                        No scores accumulated yet
+                      </Typography>
+                    )}
+                  </>
+                );
+              })()}
+              
+              {/* Add Decisions Section */}
+              {(() => {
+                const decisions = getDecisions();
+                if (decisions.length > 0) {
+                  return (
+                    <>
+                      <Divider sx={{ my: 2 }} />
+                      
+                      <Typography variant="h6" sx={{ mb: 1 }}>
+                        Underwriting Decisions
+                      </Typography>
+                      
+                      {decisions.map((item, index) => (
+                        <Box key={index} sx={{ mb: 1.5 }}>
+                          <Typography className="model-detail" sx={{ fontSize: '0.8rem' }}>
+                            {item.questionText}
+                          </Typography>
+                          <Typography className="model-detail" sx={{ 
+                            color: 'primary.main', 
+                            fontWeight: 'bold',
+                            ml: 3
+                          }}>
+                            {item.decision}
+                          </Typography>
+                        </Box>
+                      ))}
+                    </>
+                  );
+                }
+                return null;
+              })()}
             </ModelCard>
           )}
         </Grid>

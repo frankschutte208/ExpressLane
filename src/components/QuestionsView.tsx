@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   Box,
   TextField,
@@ -9,7 +9,7 @@ import {
   Snackbar,
   Button
 } from '@mui/material';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridPaginationModel, useGridApiRef } from '@mui/x-data-grid';
 import { styled } from '@mui/material/styles';
 
 const StyledPaper = styled(Paper)({
@@ -31,6 +31,8 @@ interface QuestionRow {
   Question_Text: string;
   Answer_Format: string;
   Answer_Values: string[];
+  Score: number;
+  Decision: string;
 }
 
 const API_BASE_URL = 'http://localhost:3006/api';
@@ -41,6 +43,13 @@ const QuestionsView: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
+  const [paginationModel, setPaginationModel] = useState<GridPaginationModel>({
+    page: 0,
+    pageSize: 100,
+  });
+  const dataGridRef = useRef<HTMLDivElement>(null);
+  const apiRef = useGridApiRef();
+  const scrollPositionRef = useRef(0);
 
   const columns = [
     { field: 'Id', headerName: 'ID', width: 70, editable: false },
@@ -55,7 +64,7 @@ const QuestionsView: React.FC = () => {
     { 
       field: 'Question_Text', 
       headerName: 'Question Text', 
-      width: 600, 
+      width: 400, 
       editable: true
     },
     { 
@@ -67,7 +76,7 @@ const QuestionsView: React.FC = () => {
     { 
       field: 'Answer_Values', 
       headerName: 'Answer Values', 
-      width: 400, 
+      width: 300, 
       editable: true,
       valueGetter: (params: any) => {
         const values = params.row.Answer_Values;
@@ -78,8 +87,33 @@ const QuestionsView: React.FC = () => {
         const values = value.split(',').map((v: string) => v.trim()).filter((v: string) => v !== '');
         return { ...params.row, Answer_Values: values };
       }
+    },
+    {
+      field: 'Score',
+      headerName: 'Score',
+      width: 80,
+      editable: true,
+      type: 'number'
+    },
+    {
+      field: 'Decision',
+      headerName: 'Decision',
+      width: 150,
+      editable: true
     }
   ];
+
+  // Save scroll position when scrolling
+  useEffect(() => {
+    const virtualScroller = dataGridRef.current?.querySelector('.MuiDataGrid-virtualScroller');
+    if (virtualScroller) {
+      const handleScroll = () => {
+        scrollPositionRef.current = virtualScroller.scrollTop;
+      };
+      virtualScroller.addEventListener('scroll', handleScroll);
+      return () => virtualScroller.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
 
   const handleProcessRowUpdate = async (
     newRow: QuestionRow,
@@ -108,8 +142,23 @@ const QuestionsView: React.FC = () => {
         throw new Error('Failed to save changes');
       }
 
-      // Update the local state
-      setRows(updatedData);
+      // Update the local state without causing a full re-render
+      setRows(prevRows => {
+        const newRows = prevRows.map(row => 
+          row.Id === newRow.Id ? newRow : row
+        );
+        
+        // Restore scroll position after state update
+        setTimeout(() => {
+          const virtualScroller = dataGridRef.current?.querySelector('.MuiDataGrid-virtualScroller');
+          if (virtualScroller) {
+            virtualScroller.scrollTop = scrollPositionRef.current;
+          }
+        }, 0);
+        
+        return newRows;
+      });
+      
       setSaveError(null);
       return newRow;
     } catch (error) {
@@ -131,7 +180,9 @@ const QuestionsView: React.FC = () => {
         Question_Number: Math.floor(Math.max(...data.map((row: QuestionRow) => row.Question_Number), 0)) + 1,
         Question_Text: '',
         Answer_Format: 'Yes/No',
-        Answer_Values: []
+        Answer_Values: [],
+        Score: 1, // Default score of 1 for main questions
+        Decision: ''
       };
       
       // Add new row to data
@@ -196,7 +247,7 @@ const QuestionsView: React.FC = () => {
   return (
     <Box>
       <Typography variant="h5" sx={{ mb: 3 }}>
-        Questions Library Management
+        Table of Underwriting Questions
       </Typography>
 
       <StyledPaper>
@@ -222,7 +273,10 @@ const QuestionsView: React.FC = () => {
           </Button>
         </ControlsContainer>
 
-        <Box sx={{ height: 800, width: '100%', position: 'relative' }}>
+        <Box 
+          ref={dataGridRef}
+          sx={{ height: 800, width: '100%', position: 'relative' }}
+        >
           {error && (
             <Alert severity="error" sx={{ mb: 2 }}>
               Error: {error}
@@ -244,9 +298,8 @@ const QuestionsView: React.FC = () => {
               rows={filteredRows}
               columns={columns}
               getRowId={(row: QuestionRow) => row.Id}
-              initialState={{
-                pagination: { paginationModel: { pageSize: 100 } },
-              }}
+              paginationModel={paginationModel}
+              onPaginationModelChange={setPaginationModel}
               pageSizeOptions={[25, 50, 100]}
               disableRowSelectionOnClick
               getRowHeight={() => 35}
@@ -259,6 +312,10 @@ const QuestionsView: React.FC = () => {
                 const questionNumber = params.row.Question_Number;
                 return Number.isInteger(questionNumber) ? 'highlighted-row' : '';
               }}
+              keepNonExistentRowsSelected
+              disableColumnFilter
+              autoHeight={false}
+              apiRef={apiRef}
               sx={{
                 '& .MuiDataGrid-cell': {
                   padding: '0 8px',

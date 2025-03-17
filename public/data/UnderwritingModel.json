@@ -9,12 +9,12 @@
     "Minimum_Sum_Assured": 300000,
     "Maximum_Sum_Assured": 999999.99,
     "Questions_Included": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
+      20,
+      22,
+      7,
+      8,
+      9,
+      13
     ]
   },
   {
@@ -45,8 +45,7 @@
       16,
       17,
       18,
-      19,
-      20
+      19
     ]
   },
   {
@@ -70,25 +69,22 @@
       16,
       17,
       18,
-      19,
-      20
+      19
     ]
   },
   {
     "Id": 4,
     "Tenant": "SBIB South Africa",
     "Currency": "ZAR",
-    "Product": "Flexi-Protect",
+    "Product": "Flexi-Life - South Africa",
     "Minimum_Age": 18,
     "Maximum_Age": 65,
     "Minimum_Sum_Assured": 50000,
     "Maximum_Sum_Assured": 500000,
     "Questions_Included": [
-      1,
-      2,
-      4,
-      7,
-      11
+      20,
+      21,
+      22
     ]
   }
 ]
