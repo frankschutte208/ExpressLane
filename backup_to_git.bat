@@ -3,7 +3,7 @@ setlocal EnableDelayedExpansion
 
 echo ================================================
 echo             ExpressLane Backup Tool
-echo ================================================
+echo ================================================.\
 echo.
 
 REM Check if we're in a git repository

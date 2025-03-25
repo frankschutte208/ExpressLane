@@ -4,7 +4,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const app = express();
-const PORT = process.env.API_PORT || 3006;
+const PORT = process.env.PORT || 3006;
 
 app.use(cors());
 app.use(express.json());
