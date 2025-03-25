@@ -12,6 +12,9 @@ app.use(express.json());
 // Serve static files from the public directory
 app.use(express.static('public'));
 
+// Serve static files from the React build directory
+app.use(express.static(path.join(__dirname, 'build')));
+
 // Helper function to read JSON file
 const readJsonFile = async (filePath) => {
   try {
@@ -75,6 +78,12 @@ app.put('/api/underwriting-models', async (req, res) => {
     console.error('Error in PUT /api/underwriting-models:', error);
     res.status(500).json({ error: 'Failed to update underwriting models data' });
   }
+});
+
+// Add this before app.listen
+// Handle React routing, return all requests to React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(PORT, () => {
