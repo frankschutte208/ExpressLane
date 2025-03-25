@@ -212,11 +212,14 @@ const QuestionsView: React.FC = () => {
       setLoading(true);
       setError(null);
       try {
+        console.log('Fetching data from:', `${API_BASE_URL}/questions`);
         const response = await fetch(`${API_BASE_URL}/questions`);
+        console.log('Response status:', response.status);
         if (!response.ok) {
           throw new Error(`Failed to load data: ${response.status} ${response.statusText}`);
         }
         const data = await response.json();
+        console.log('Data received:', data?.length, 'rows');
         if (!Array.isArray(data)) {
           throw new Error('Data is not an array');
         }

@@ -1,6 +1,6 @@
 {
-  "short_name": "Express Lane",
-  "name": "Express Lane Underwriting",
+  "short_name": "ExpressLane",
+  "name": "ExpressLane Underwriting",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#003087",
+  "theme_color": "#000000",
   "background_color": "#ffffff"
 } 

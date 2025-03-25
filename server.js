@@ -6,13 +6,17 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3006;
 
-app.use(cors());
+// Enable CORS for all routes
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+// Middleware to parse JSON bodies
 app.use(express.json());
 
-// Serve static files from the public directory
-app.use(express.static('public'));
-
-// Serve static files from the React build directory
+// Serve static files from the build directory
 app.use(express.static(path.join(__dirname, 'build')));
 
 // Helper function to read JSON file
@@ -36,25 +40,28 @@ const writeJsonFile = async (filePath, data) => {
   }
 };
 
-// GET endpoint for questions
+// API endpoint to get questions
 app.get('/api/questions', async (req, res) => {
   try {
-    const data = await readJsonFile(path.join(__dirname, 'public/data/QuestionsLibrary.json'));
-    res.json(data);
+    console.log('Received request for questions');
+    const data = await fs.readFile(path.join(__dirname, 'public', 'data', 'QuestionsLibrary.json'), 'utf8');
+    console.log('Questions data loaded successfully');
+    res.json(JSON.parse(data));
   } catch (error) {
-    console.error('Error in GET /api/questions:', error);
-    res.status(500).json({ error: 'Failed to read questions data' });
+    console.error('Error reading questions:', error);
+    res.status(500).json({ error: 'Failed to load questions' });
   }
 });
 
-// PUT endpoint for questions
+// API endpoint to update questions
 app.put('/api/questions', async (req, res) => {
   try {
-    await writeJsonFile(path.join(__dirname, 'public/data/QuestionsLibrary.json'), req.body);
-    res.json({ message: 'Questions updated successfully' });
+    const data = JSON.stringify(req.body, null, 2);
+    await fs.writeFile(path.join(__dirname, 'public', 'data', 'QuestionsLibrary.json'), data);
+    res.json({ success: true });
   } catch (error) {
-    console.error('Error in PUT /api/questions:', error);
-    res.status(500).json({ error: 'Failed to update questions data' });
+    console.error('Error saving questions:', error);
+    res.status(500).json({ error: 'Failed to save questions' });
   }
 });
 
@@ -80,12 +87,12 @@ app.put('/api/underwriting-models', async (req, res) => {
   }
 });
 
-// Add this before app.listen
-// Handle React routing, return all requests to React app
+// Handle all other routes by serving the React app
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+  console.log(`API Base URL: ${process.env.REACT_APP_API_BASE_URL || 'Not set'}`);
 }); 
