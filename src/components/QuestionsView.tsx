@@ -31,7 +31,7 @@ interface QuestionRow {
   Question_Text: string;
   Answer_Format: string;
   Answer_Values: string[];
-  Score: number;
+  EMLoading: number;
   Decision: string;
 }
 
@@ -52,19 +52,19 @@ const QuestionsView: React.FC = () => {
   const scrollPositionRef = useRef(0);
 
   const columns = [
-    { field: 'Id', headerName: 'ID', width: 70, editable: false },
-    { field: 'category', headerName: 'Category', width: 130, editable: true },
+    { field: 'Id', headerName: 'ID', width: 50, editable: false },
+    { field: 'category', headerName: 'Category', width: 100, editable: true },
     { 
       field: 'Question_Number', 
       headerName: 'Question #', 
-      width: 90, 
+      width: 80, 
       editable: true,
       type: 'number'
     },
     { 
       field: 'Question_Text', 
       headerName: 'Question Text', 
-      width: 400, 
+      width: 500, 
       editable: true
     },
     { 
@@ -76,7 +76,7 @@ const QuestionsView: React.FC = () => {
     { 
       field: 'Answer_Values', 
       headerName: 'Answer Values', 
-      width: 300, 
+      width: 550, 
       editable: true,
       valueGetter: (params: any) => {
         const values = params.row.Answer_Values;
@@ -89,8 +89,8 @@ const QuestionsView: React.FC = () => {
       }
     },
     {
-      field: 'Score',
-      headerName: 'Score',
+      field: 'EMLoading',
+      headerName: 'EMLoading',
       width: 80,
       editable: true,
       type: 'number'
@@ -175,20 +175,19 @@ const QuestionsView: React.FC = () => {
       
       // Create new row with default values
       const newRow: QuestionRow = {
-        Id: Math.max(...data.map((row: QuestionRow) => row.Id), 0) + 1,
-        category: '',
-        Question_Number: Math.floor(Math.max(...data.map((row: QuestionRow) => row.Question_Number), 0)) + 1,
-        Question_Text: '',
+        Id: Math.max(...data.map((row: QuestionRow) => row.Id)) + 1,
+        category: 'New Category',
+        Question_Number: Math.max(...data.map((row: QuestionRow) => row.Question_Number)) + 1,
+        Question_Text: 'New Question',
         Answer_Format: 'Yes/No',
-        Answer_Values: [],
-        Score: 1, // Default score of 1 for main questions
+        Answer_Values: ['Yes', 'No'],
+        EMLoading: 1, // Default EMLoading of 1 for main questions
         Decision: ''
       };
       
-      // Add new row to data
+      // Add to data and save
       const updatedData = [...data, newRow];
-
-      // Save back to file through API
+      
       const saveResponse = await fetch(`${API_BASE_URL}/questions`, {
         method: 'PUT',
         headers: {
@@ -198,12 +197,11 @@ const QuestionsView: React.FC = () => {
       });
 
       if (!saveResponse.ok) {
-        throw new Error('Failed to add new row');
+        throw new Error('Failed to save new row');
       }
 
       // Update the local state
       setRows(updatedData);
-      setSaveError(null);
     } catch (error) {
       setSaveError(error instanceof Error ? error.message : 'Failed to add new row');
     }
@@ -321,7 +319,7 @@ const QuestionsView: React.FC = () => {
                   padding: '0 8px',
                   whiteSpace: 'normal',
                   lineHeight: '18px',
-                  fontSize: '12px'
+                  fontSize: '11px'
                 },
                 '& .MuiDataGrid-columnHeader': {
                   padding: '0 8px',

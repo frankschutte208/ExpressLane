@@ -30,7 +30,7 @@ interface Question {
   Question_Text: string;
   Answer_Format: string;
   Answer_Values: string[];
-  Score: number;
+  EMLoading: number;
   Decision: string;
 }
 
@@ -252,31 +252,21 @@ const SimulatorView: React.FC = () => {
       .sort((a, b) => a.Question_Number - b.Question_Number);
   };
 
-  // Calculate underwriting scores by category
-  const calculateUnderwritingScores = () => {
-    const scoresByCategory: Record<string, number> = {};
-    let totalScore = 0;
-    
-    // Initialize categories with 0 scores
-    categories.forEach(category => {
-      scoresByCategory[category] = 0;
-    });
-    
-    // Calculate scores for answered questions
-    Object.entries(answers).forEach(([questionIdStr, answer]) => {
-      const questionId = parseInt(questionIdStr);
-      const question = questions.find(q => q.Id === questionId);
-      
-      if (question && 
-          ((question.Answer_Format === 'Yes/No' && answer === 'Yes') || 
-           (question.Answer_Format !== 'Yes/No' && answer))) {
+  // Calculate underwriting EMLoadings by category
+  const calculateUnderwritingEMLoadings = (questions: Question[], answers: Record<number, string>) => {
+    const emLoadingsByCategory: Record<string, number> = {};
+    let totalEMLoading = 0;
+
+    questions.forEach((question) => {
+      const answer = answers[question.Id];
+      if (answer === 'Yes' || (answer && question.Answer_Format !== 'Yes/No')) {
         const category = question.category;
-        scoresByCategory[category] = (scoresByCategory[category] || 0) + question.Score;
-        totalScore += question.Score;
+        emLoadingsByCategory[category] = (emLoadingsByCategory[category] || 0) + question.EMLoading;
+        totalEMLoading += question.EMLoading;
       }
     });
-    
-    return { scoresByCategory, totalScore };
+
+    return { emLoadingsByCategory, totalEMLoading };
   };
 
   // Get decisions for questions answered "Yes" that have a non-empty Decision field
@@ -413,32 +403,32 @@ const SimulatorView: React.FC = () => {
               <Divider sx={{ my: 2 }} />
               
               <Typography variant="h6" sx={{ mb: 1 }}>
-                Underwriting Score
+                Underwriting EMLoading
               </Typography>
               
               {(() => {
-                const { scoresByCategory, totalScore } = calculateUnderwritingScores();
+                const { emLoadingsByCategory, totalEMLoading } = calculateUnderwritingEMLoadings(questions, answers);
                 return (
                   <>
-                    {Object.entries(scoresByCategory)
-                      .filter(([category, score]) => score > 0)
-                      .map(([category, score]) => (
+                    {Object.entries(emLoadingsByCategory)
+                      .filter(([category, loading]) => loading > 0)
+                      .map(([category, loading]) => (
                         <Typography key={category} className="model-detail">
-                          <strong>{category}:</strong> {score}
+                          <strong>{category}:</strong> {loading}
                         </Typography>
                       ))}
                     
-                    {totalScore > 0 ? (
+                    {totalEMLoading > 0 ? (
                       <Typography className="model-detail" sx={{ 
                         mt: 1, 
                         fontWeight: 'bold',
-                        color: totalScore > 10 ? 'error.main' : 'inherit'
+                        color: totalEMLoading > 10 ? 'error.main' : 'inherit'
                       }}>
-                        <strong>Total Score:</strong> {totalScore}
+                        <strong>Total EMLoading:</strong> {totalEMLoading}
                       </Typography>
                     ) : (
                       <Typography className="model-detail" sx={{ fontStyle: 'italic', color: 'text.secondary' }}>
-                        No scores accumulated yet
+                        No EMLoadings accumulated yet
                       </Typography>
                     )}
                   </>
