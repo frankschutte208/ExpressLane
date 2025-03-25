@@ -35,7 +35,7 @@ interface QuestionRow {
   Decision: string;
 }
 
-const API_BASE_URL = 'http://localhost:3006/api';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://expresslane-demo.onrender.com/api';
 
 const QuestionsView: React.FC = () => {
   const [rows, setRows] = useState<QuestionRow[]>([]);
